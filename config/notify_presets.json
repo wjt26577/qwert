@@ -1,0 +1,23 @@
+﻿{
+  "version": 1,
+  "presets": [
+    {
+      "name": "1080p_100",
+      "width": 1920,
+      "height": 1080,
+      "scale": 100,
+      "dpi": 96,
+      "barHeight": 88,
+      "fontSize": 26
+    },
+    {
+      "name": "4K_150",
+      "width": 3840,
+      "height": 2160,
+      "scale": 150,
+      "dpi": 144,
+      "barHeight": 150,
+      "fontSize": 36
+    }
+  ]
+}

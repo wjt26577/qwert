@@ -1,0 +1,57 @@
+﻿{
+    "baidu_ai": {
+      "token_url": "https://aip.baidubce.com/oauth/2.0/token",
+  
+      "ocr": {
+        "api_key": "cP0vgrx0Cu86odtEpmn9rz4Y",
+        "secret_key": "PLH5jHjPWmi6J2T8i3Zsd6p7Djqjkeqa",
+        "token_url": "https://aip.baidubce.com/oauth/2.0/token",
+        "api_url": "https://aip.baidubce.com/rest/2.0/ocr/v1/accurate_basic"
+      },
+  
+      "accurate_ocr": {
+        "api_key": "cP0vgrx0Cu86odtEpmn9rz4Y",
+        "secret_key": "PLH5jHjPWmi6J2T8i3Zsd6p7Djqjkeqa",
+        "token_url": "https://aip.baidubce.com/oauth/2.0/token",
+        "api_url": "https://aip.baidubce.com/rest/2.0/ocr/v1/accurate_basic"
+      },
+  
+      "general_ocr": {
+        "api_key": "cP0vgrx0Cu86odtEpmn9rz4Y",
+        "secret_key": "PLH5jHjPWmi6J2T8i3Zsd6p7Djqjkeqa",
+        "token_url": "https://aip.baidubce.com/oauth/2.0/token",
+        "api_url": "https://aip.baidubce.com/rest/2.0/ocr/v1/general_basic"
+      },
+  
+      "remove_handwriting_ocr": {
+        "api_key": "cP0vgrx0Cu86odtEpmn9rz4Y",
+        "secret_key": "PLH5jHjPWmi6J2T8i3Zsd6p7Djqjkeqa",
+        "token_url": "https://aip.baidubce.com/oauth/2.0/token",
+        "api_url": "https://aip.baidubce.com/rest/2.0/ocr/v1/remove_handwriting"
+      },
+  
+      "translation": {
+        "api_key": "zXa3W3adFJuOWbx4M7quObOs",
+        "secret_key": "lD2XV8xDVeTJKIyvxjoy4ZrhSHgQw7iA",
+        "token_url": "https://aip.baidubce.com/oauth/2.0/token",
+        "api_url": "https://aip.baidubce.com/rpc/2.0/mt/texttrans/v1"
+      },
+  
+      "text_translation": {
+        "api_key": "zXa3W3adFJuOWbx4M7quObOs",
+        "secret_key": "lD2XV8xDVeTJKIyvxjoy4ZrhSHgQw7iA",
+        "token_url": "https://aip.baidubce.com/oauth/2.0/token",
+        "api_url": "https://aip.baidubce.com/rpc/2.0/mt/texttrans/v1"
+      },  
+  
+      "picture_translation": {
+        "api_key": "zXa3W3adFJuOWbx4M7quObOs",
+        "secret_key": "lD2XV8xDVeTJKIyvxjoy4ZrhSHgQw7iA",
+        "token_url": "https://aip.baidubce.com/oauth/2.0/token",
+        "api_url": "https://aip.baidubce.com/file/2.0/mt/pictrans/v1"
+      } 
+    }
+
+
+  }
+

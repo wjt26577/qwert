@@ -1,0 +1,7 @@
+{
+    "editor.fontFamily": "Cascadia Code",
+    "editor.mouseWheelZoom": true,
+    "terminal.integrated.fontSize": 14,
+    "editor.fontSize": 18,
+    "AutoHotkey2.InterpreterPath": "C:\\Program Files\\AutoHotkey\\v2\\AutoHotkey.exe"
+}

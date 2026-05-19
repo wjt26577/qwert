@@ -1,0 +1,720 @@
+﻿{
+"app_keyboard": {
+  "payload": "osk.exe",
+  "label": "屏幕键盘",
+  "kind": "app"
+},
+
+"app_obsidian": {
+  "payload": "C:\\Program Files\\Obsidian\\Obsidian.exe",
+  "label": "Obsidian",
+  "kind": "app"
+},
+
+"app_codex": {
+  "payload": "explorer.exe shell:AppsFolder\\OpenAI.Codex_2p2nqsd0c76g0!App",
+  "label": "Codex",
+  "kind": "app"
+},
+
+"app_excel": {
+  "payload": "C:\\Program Files\\Microsoft Office\\root\\Office16\\EXCEL.EXE",
+  "label": "Excel",
+  "kind": "app"
+},
+
+"app_word": {
+  "payload": "C:\\Program Files\\Microsoft Office\\root\\Office16\\WINWORD.EXE",
+  "label": "Word",
+  "kind": "app"
+},
+
+"app_ppt": {
+  "payload": "C:\\Program Files\\Microsoft Office\\root\\Office16\\POWERPNT.EXE",
+  "label": "PowerPoint",
+  "kind": "app"
+},
+
+"app_vscode": {
+  "payload": "C:\\Program Files\\Microsoft VS Code\\Code.exe",
+  "label": "Visual Studio Code",
+  "kind": "app"
+},
+
+"app_scite": {
+  "payload": "C:\\Program Files\\AutoHotkey\\SciTE\\SciTE.exe",
+  "label": "SciTE",
+  "kind": "app"
+},
+
+"app_chrome": {
+  "payload": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+  "label": "Chrome",
+  "kind": "app"
+},
+
+"app_notepad": {
+  "payload": "C:\\Windows\\notepad.exe",
+  "label": "记事本",
+  "kind": "app"
+},
+
+"app_everything": {
+  "payload": "C:\\Program Files\\everything\\Everything.exe",
+  "label": "Everything",
+  "kind": "app"
+},
+
+"app_7zip": {
+  "payload": "C:\\Program Files\\7-Zip\\7z.exe",
+  "label": "7-Zip",
+  "kind": "app"
+},
+
+"app_totalcmd": {
+  "payload": "C:\\Users\\13661\\AppData\\Local\\TotalCMD64\\TotalCMD64.exe",
+  "label": "Total Commander",
+  "kind": "app"
+},
+
+"app_potplayer": {
+  "payload": "C:\\Program Files\\DAUM\\PotPlayer\\PotPlayerMini64.exe",
+  "label": "PotPlayer",
+  "kind": "app"
+},
+
+"app_photoshop": {
+  "payload": "C:\\Program Files\\Adobe\\AdobePhotoshop2023\\Photoshop.exe",
+  "label": "Photoshop",
+  "kind": "app"
+},
+
+"app_eagle": {
+  "payload": "C:\\Program Files\\eagle\\eagle.exe",
+  "label": "Eagle",
+  "kind": "app"
+},
+
+"app_fxsound": {
+  "payload": "C:\\Program Files\\FxSound LLC\\FxSound\\FxSound.exe",
+  "label": "FxSound",
+  "kind": "app"
+},
+
+"app_wechat": {
+  "payload": "C:\\Program Files\\Tencent\\Weixin\\Weixin.exe",
+  "label": "微  信",
+  "kind": "app"
+},
+
+"app_wxwork": {
+  "payload": "C:\\Program Files (x86)\\WXWork\\WXWork.exe",
+  "label": "企业微信",
+  "kind": "app"
+},
+
+"app_wemeet": {
+  "payload": "C:\\Program Files\\Tencent\\WeMeet\\WeMeetApp.exe",
+  "label": "腾讯会议",
+  "kind": "app"
+},
+
+"app_mailmaster": {
+  "payload": "C:\\Program Files (x86)\\Netease\\MailMaster\\Application\\mailmaster.exe",
+  "label": "网易邮箱大师",
+  "kind": "app"
+},
+
+"app_evernote": {
+  "payload": "C:\\Program Files (x86)\\Yinxiang Biji\\印象笔记\\Evernote.exe",
+  "label": "印象笔记",
+  "kind": "app"
+},
+
+"app_snipaste": {
+  "payload": "Snipaste",
+  "label": "Snipaste",
+  "kind": "app"
+},
+
+"app_youdaodict": {
+  "payload": "C:\\Users\\13661\\AppData\\Local\\youdao\\dict\\Application\\YoudaoDict.exe",
+  "label": "有道词典",
+  "kind": "app"
+},
+
+"app_baidu": {
+  "payload": "C:\\Users\\13661\\AppData\\Roaming\\baidu\\BaiduNetdisk\\BaiduNetdisk.exe",
+  "label": "百度网盘",
+  "kind": "app"
+},
+
+"app_spy": {
+  "payload": "D:\\system\\green_app\\WindowSpyDpi\\WindowSpyDpi.exe",
+  "label": "Window Spy",
+  "kind": "app"
+},
+
+"app_notify_creator": {
+  "payload": "D:\\03_code\\autohotkey\\project\\qwert\\Lib\\NotifyClass-NotifyCreator-main\\Notify Creator.ahk",
+  "label": "Notify Creator",
+  "kind": "app"
+},
+
+"app_xdqy": {
+  "payload": "C:\\Program Files\\Palantir\\Palantir.exe",
+  "label": "新东方云教室",
+  "kind": "app"
+},
+
+"app_doubao": {
+  "payload": "C:\\Users\\13661\\AppData\\Local\\Doubao\\Application\\Doubao.exe",
+  "label": "字节豆包",
+  "kind": "app"
+},
+
+"app_cherrystudio": {
+  "payload": "C:\\Program Files\\Cherry Studio\\Cherry Studio.exe",
+  "label": "Cherry Studio",
+  "kind": "app"
+},
+
+"app_typora": {
+  "payload": "C:\\Program Files\\Typora\\Typora.exe",
+  "label": "Typora",
+  "kind": "app"
+},
+
+"app_powershell": {
+  "payload": "powershell.exe",
+  "label": "PowerShell",
+  "kind": "app"
+},
+
+"app_powershell_admin": {
+  "payload": "*RunAs powershell.exe",
+  "label": "PowerShell@管理员身份",
+  "kind": "app"
+},
+
+"app_powershell_terminal": {
+  "payload": "wt.exe -p PowerShell",
+  "label": "PowerShell@终端",
+  "kind": "app"
+},
+
+"app_cmd": {
+  "payload": "cmd",
+  "label": "命令提示符",
+  "kind": "app"
+},
+
+"app_qianwen": {
+  "payload": "C:\\Users\\13661\\AppData\\Local\\Programs\\QianwenApp\\Qianwen.exe",  
+  "label": "千   问",
+  "kind": "app"
+},
+
+
+
+
+
+
+
+
+"url_chatgpt": {
+  "payload": "https://chatgpt.com/",
+  "label": "ChatGPT",
+  "kind": "path"
+},
+
+"url_gpt_image": {
+  "payload": "https://chatgpt.com/images",
+  "label": "GPT Image",
+  "kind": "path"
+},
+"url_lovart": {
+  "payload": "https://www.lovart.ai/zh/home",
+  "label": "Lovart",
+  "kind": "path"
+},
+"url_claude": {
+  "payload": "https://claude.ai/",
+  "label": "Claude",
+  "kind": "path"
+},
+
+"url_gemini": {
+  "payload": "https://gemini.google.com/",
+  "label": "Gemini",
+  "kind": "path"
+},
+
+"url_perplexity": {
+  "payload": "https://www.perplexity.ai/",
+  "label": "Perplexity",
+  "kind": "path"
+},
+"url_copilot": {
+  "payload": "https://copilot.microsoft.com/",
+  "label": "Copilot",
+  "kind": "path"
+},
+
+"url_minimax": {
+  "payload": "https://chat.minimaxi.com/",
+  "label": "Minimax",
+  "kind": "path"
+},
+
+"url_tongyi": {
+  "payload": "https://www.qianwen.com/",
+  "label": "通义千问",
+  "kind": "path"
+},
+
+"url_yuanbao": {
+  "payload": "https://yuanbao.tencent.com/",
+  "label": "腾讯元宝",
+  "kind": "path"
+},
+
+"url_deepseek": {
+  "payload": "https://chat.deepseek.com/",
+  "label": "DeepSeek",
+  "kind": "path"
+},
+
+"url_wenxin": {
+  "payload": "https://yiyan.baidu.com/",
+  "label": "文心一言",
+  "kind": "path"
+},
+
+"url_xinghuo": {
+  "payload": "https://xinghuo.xfyun.cn/",
+  "label": "讯飞星火",
+  "kind": "path"
+},
+
+"url_zhipu": {
+  "payload": "https://chatglm.cn/",
+  "label": "智谱AI",
+  "kind": "path"
+},
+
+"url_kimi": {
+  "payload": "https://kimi.moonshot.cn/",
+  "label": "Kimi",
+  "kind": "path"
+},
+
+"url_doubao": {
+  "payload": "https://www.doubao.com/",
+  "label": "字节豆包",
+  "kind": "path"
+},
+
+"url_chatboxai": {
+  "payload": "https://web.chatboxai.app/",
+  "label": "ChatBoxAI",
+  "kind": "path"
+},
+
+"url_coze": {
+  "payload": "https://www.coze.cn/",
+  "label": "Coze",
+  "kind": "path"
+},
+
+"url_hailuoai": {
+  "payload": "https://hailuoai.com/",
+  "label": "海螺AI",
+  "kind": "path"
+},
+
+"url_midjourney": {
+  "payload": "https://www.midjourney.com/",
+  "label": "Midjourney",
+  "kind": "path"
+},
+
+"url_leonardo": {
+  "payload": "https://leonardo.ai/",
+  "label": "Leonardo",
+  "kind": "path"
+},
+
+"url_runway": {
+  "payload": "https://runwayml.com/",
+  "label": "Runway",
+  "kind": "path"
+},
+
+"url_sd": {
+  "payload": "https://stablediffusionweb.com/",
+  "label": "Stable Diffusion",
+  "kind": "path"
+},
+"url_dalle": {
+  "payload": "https://openai.com/dall-e-3",
+  "label": "DALL·E",
+  "kind": "path"
+},
+
+"url_ideogram": {
+  "payload": "https://ideogram.ai/",
+  "label": "Ideogram",
+  "kind": "path"
+},
+
+"url_firefly": {
+  "payload": "https://firefly.adobe.com/",
+  "label": "Adobe Firefly",
+  "kind": "path"
+},
+
+"url_canva": {
+  "payload": "https://www.canva.com/ai-image-generator/",
+  "label": "Canva AI",
+  "kind": "path"
+},
+
+"url_remove_bg": {
+  "payload": "https://www.remove.bg/",
+  "label": "RemoveBG",
+  "kind": "path"
+},
+
+"url_upscaler": {
+  "payload": "https://www.upscaler.ai/",
+  "label": "Upscaler",
+  "kind": "path"
+},
+
+"url_suno": {
+  "payload": "https://suno.com/",
+  "label": "Suno",
+  "kind": "path"
+},
+
+"url_udio": {
+  "payload": "https://www.udio.com/",
+  "label": "Udio",
+  "kind": "path"
+},
+
+"url_ahk_help": {
+  "payload": "https://wyagd001.github.io/v2/docs/",
+  "label": "AutoHotkey帮助",
+  "kind": "path"
+},
+"url_ahk_forum": {
+  "payload": "https://www.autohotkey.com/boards/",
+  "label": "AutoHotkey论坛",
+  "kind": "path"
+},
+"url_office_vba": {
+  "payload": "https://learn.microsoft.com/zh-cn/office/vba/api/overview/",
+  "label": "Office VBA文档",
+  "kind": "path"
+},
+
+"url_jd": {
+  "payload": "https://www.jd.com/",
+  "label": "京东",
+  "kind": "path"
+},
+
+"url_xianyu": {
+  "payload": "https://www.goofish.com/",
+  "label": "闲鱼",
+  "kind": "path"
+},
+
+"url_taobao": {
+  "payload": "https://www.taobao.com/",
+  "label": "淘宝",
+  "kind": "path"
+},
+
+"url_zsxq": {
+  "payload": "https://wx.zsxq.com/group/1111424852",
+  "label": "知识星球",
+  "kind": "path"
+},
+
+"url_zhyw": {
+  "payload": "https://ops.smgtech.net/",
+  "label": "智慧运维",
+  "kind": "path"
+},
+"url_zhlmt": {
+  "payload": "https://csb.smgtech.net/i/#",
+  "label": "任务单",
+  "kind": "path"
+},
+"url_wjx": {
+  "payload": "https://www.wjx.cn/login.aspx",
+  "label": "问卷星",
+  "kind": "path"
+},
+
+"url_xiaohongshu": {
+  "payload": "https://www.xiaohongshu.com/",
+  "label": "小红书",
+  "kind": "path"
+},
+
+"url_qqlive": {
+  "payload": "https://v.qq.com/",
+  "label": "腾讯视频",
+  "kind": "path"
+},
+
+"url_iqiyi": {
+  "payload": "https://www.iqiyi.com/",
+  "label": "爱奇艺",
+  "kind": "path"
+},
+
+"url_bilibili": {
+  "payload": "https://www.bilibili.com/",
+  "label": "哔哩哔哩",
+  "kind": "path"
+},
+
+"url_yunwu": {
+  "payload": "https://www.yunwu.ai/",
+  "label": "云雾API",
+  "kind": "path"
+},
+
+"url_douyin": {
+  "payload": "https://www.douyin.com/",
+  "label": "抖音",
+  "kind": "path"
+},
+
+
+
+
+
+
+
+
+
+
+
+"layout_json": {
+  "payload": "\\settings\\layout_frames.json",
+  "label": "layout_json",
+  "kind": "path"
+},
+
+"preset_layouts_json": {
+  "payload": "\\settings\\preset_layouts.json",
+  "label": "preset_layouts_json",
+  "kind": "path"
+},
+
+"png_file": {
+  "payload": "D:\\02_cache\\screenshot\\OCR.png",
+  "label": "png_file",
+  "kind": "path"
+},
+"bmp_file": {
+  "payload": "D:\\02_cache\\screenshot\\OCR.bmp",
+  "label": "bmp_file",
+  "kind": "path"
+},
+"txt_file": {
+  "payload": "D:\\02_cache\\screenshot\\OCR.txt",
+  "label": "txt_file",
+  "kind": "path"
+},
+
+"duty_table_local": {
+  "payload": "D:\\04_work\\routine\\排班表\\卫星地球站排班表 - 2025.xls",
+  "label": "本地排班表",
+  "kind": "path"
+},
+
+"weekly_report": {
+  "payload": "D:\\04_work\\routine\\报告\\【周报】2025×王俊涛.xlsx",
+  "label": "周报",
+  "kind": "path"
+},
+
+"assets_management": {
+  "payload": "D:\\04_work\\assets\\2024固定资产管理.xlsm",
+  "label": "assets_management",
+  "kind": "path"
+},
+
+"barcode_file": {
+  "payload": "D:\\04_work\\assets\\01_条码打印\\固定资产条码.xls",
+  "label": "barcode_file",
+  "kind": "path"
+},
+
+"training_template": {
+  "payload": "D:\\04_work\\routine\\培训\\03_培训资料\\培训模板\\地球站培训记录表模板.xlsx",
+  "label": "training_template",
+  "kind": "path"
+},
+
+"operation_manual": {
+  "payload": "D:\\04_work\\routine\\维护\\上海广播电视台卫星地球站操作应急规范-播出系统V24.10.docx",
+  "label": "operation_manual",
+  "kind": "path"
+},
+
+"file_shortcut": {
+  "payload": "D:\\system\\qwert\\config\\shoutcut_table.xlsx",
+  "label": "快捷键配置表",
+  "kind": "path"
+},
+
+"desktop_notes_1": {
+  "payload": "Snipaste paste --pos 1920 0 --files D:\\system\\desktop_notes\\vscode_shortcut.png",
+  "label": "desktop_notes_1",
+  "kind": "path"
+},
+
+"desktop_notes_2": {
+  "payload": "Snipaste paste --pos 1920 0 --files D:\\system\\desktop_notes\\snipaste_help_1.png",
+  "label": "desktop_notes_2",
+  "kind": "path"
+},
+
+"desktop_notes_3": {
+  "payload": "Snipaste paste --pos 1920 0 --files D:\\system\\desktop_notes\\snipaste_help_2.png",
+  "label": "desktop_notes_3",
+  "kind": "path"
+},
+
+"path_d_drive": {
+  "payload": "D:\\",
+  "label": "d_drive",
+  "kind": "path"
+},
+
+"path_download": {
+  "payload": "D:\\02_cache\\download",
+  "label": "download",
+  "kind": "path"
+},
+
+"path_baidu": {
+  "payload": "D:\\02_cache\\BaiduNetdiskDownload",
+  "label": "baidu_download",
+  "kind": "path"
+},
+
+"path_routine": {
+  "payload": "D:\\04_work\\routine",
+  "label": "routine",
+  "kind": "path"
+},
+
+"path_rcgz": {
+  "payload": "D:\\日常工作",
+  "label": "rcgz",
+  "kind": "path"
+},
+
+"path_work_project": {
+  "payload": "D:\\04_work\\project",
+  "label": "work_project",
+  "kind": "path"
+},
+
+"path_ahk_doc": {
+  "payload": "D:\\03_code\\autohotkey\\project\\qwert\\doc",
+  "label": "ahk_doc",
+  "kind": "path"
+},
+
+"run_config_folder": {
+  "payload": "D:\\03_code\\autohotkey\\project\\qwert",
+  "label": "config_folder",
+  "kind": "path"
+},
+
+"path_vba_code": {
+  "payload": "D:\\03_编程开发\\01_AutoHotkey\\01_我的代码\\qwert\\vba",
+  "label": "vba_code",
+  "kind": "path"
+},
+
+"path_project": {
+  "payload": "D:\\工作\\项目",
+  "label": "project",
+  "kind": "path"
+},
+
+"path_system": {
+  "payload": "D:\\system",
+  "label": "system",
+  "kind": "path"
+},
+
+"path_inbox": {
+  "payload": "D:\\system\\inbox",
+  "label": "inbox",
+  "kind": "path"
+},
+
+"path_screenshot": {
+  "payload": "D:\\02_cache\\screenshot",
+  "label": "screenshot",
+  "kind": "path"
+},
+
+"path_image": {
+  "payload": "D:\\03_code\\autohotkey\\project\\qwert\\img",
+  "label": "image",
+  "kind": "path"
+},
+
+"path_system_data": {
+  "payload": "D:\\system",
+  "label": "system_data",
+  "kind": "path"
+},
+
+"path_desktop_notes": {
+  "payload": "D:\\system\\desktop_notes",
+  "label": "desktop_notes",
+  "kind": "path"
+},
+
+
+
+
+"path_pbb_server": {
+  "payload": "\\\\172.20.1.254\\地球站\\公用\\工作日程表",
+  "label": "服务器排班表文件夹",
+  "kind": "path"
+},
+
+"path_wh_server": {
+  "payload": "\\\\172.20.1.254\\地球站\\技术体系\\系统维护工作\\系统维护和变更记录\\维护登录\\",
+  "label": "服务器维护文件夹",
+  "kind": "path"
+},
+
+"path_gr_server": {
+  "payload": "\\\\172.20.1.254\\地球站个人资料\\工程师\\王俊涛",
+  "label": "服务器个人文件夹",
+  "kind": "path"
+},
+
+"path_screenshot_path": {
+  "payload": "D:\\temp",
+  "label": "screenshot_path",
+  "kind": "path"
+}
+}
+

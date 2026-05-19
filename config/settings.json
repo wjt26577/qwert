@@ -1,0 +1,335 @@
+﻿{
+    "meta": {
+      "version": "2.0.0", 
+      "last_updated": "2025-06-02"
+    },
+
+    "baidu_ai": {
+      "token_url": "https://aip.baidubce.com/oauth/2.0/token",
+  
+      "ocr": {
+        "api_key": "cP0vgrx0Cu86odtEpmn9rz4Y",
+        "secret_key": "PLH5jHjPWmi6J2T8i3Zsd6p7Djqjkeqa",
+        "token_url": "https://aip.baidubce.com/oauth/2.0/token",
+        "api_url": "https://aip.baidubce.com/rest/2.0/ocr/v1/accurate_basic"
+      },
+  
+      "accurate_ocr": {
+        "api_key": "cP0vgrx0Cu86odtEpmn9rz4Y",
+        "secret_key": "PLH5jHjPWmi6J2T8i3Zsd6p7Djqjkeqa",
+        "token_url": "https://aip.baidubce.com/oauth/2.0/token",
+        "api_url": "https://aip.baidubce.com/rest/2.0/ocr/v1/accurate_basic"
+      },
+  
+      "general_ocr": {
+        "api_key": "cP0vgrx0Cu86odtEpmn9rz4Y",
+        "secret_key": "PLH5jHjPWmi6J2T8i3Zsd6p7Djqjkeqa",
+        "token_url": "https://aip.baidubce.com/oauth/2.0/token",
+        "api_url": "https://aip.baidubce.com/rest/2.0/ocr/v1/general_basic"
+      },
+  
+      "remove_handwriting_ocr": {
+        "api_key": "cP0vgrx0Cu86odtEpmn9rz4Y",
+        "secret_key": "PLH5jHjPWmi6J2T8i3Zsd6p7Djqjkeqa",
+        "token_url": "https://aip.baidubce.com/oauth/2.0/token",
+        "api_url": "https://aip.baidubce.com/rest/2.0/ocr/v1/remove_handwriting"
+      },
+  
+      "translation": {
+        "api_key": "zXa3W3adFJuOWbx4M7quObOs",
+        "secret_key": "lD2XV8xDVeTJKIyvxjoy4ZrhSHgQw7iA",
+        "token_url": "https://aip.baidubce.com/oauth/2.0/token",
+        "api_url": "https://aip.baidubce.com/rpc/2.0/mt/texttrans/v1"
+      },
+  
+      "text_translation": {
+        "api_key": "zXa3W3adFJuOWbx4M7quObOs",
+        "secret_key": "lD2XV8xDVeTJKIyvxjoy4ZrhSHgQw7iA",
+        "token_url": "https://aip.baidubce.com/oauth/2.0/token",
+        "api_url": "https://aip.baidubce.com/rpc/2.0/mt/texttrans/v1"
+      },  
+  
+      "picture_translation": {
+        "api_key": "zXa3W3adFJuOWbx4M7quObOs",
+        "secret_key": "lD2XV8xDVeTJKIyvxjoy4ZrhSHgQw7iA",
+        "token_url": "https://aip.baidubce.com/oauth/2.0/token",
+        "api_url": "https://aip.baidubce.com/file/2.0/mt/pictrans/v1"
+      } 
+    },
+  
+    "websites": {
+          "chatgpt": "https://chatgpt.com/",
+          "lovart": "https://www.lovart.ai/zh/home",
+          "claude": "https://claude.ai/",
+          "gemini": "https://gemini.google.com/",
+          "perplexity": "https://www.perplexity.ai/",
+          "copilot": "https://copilot.microsoft.com/",
+    
+          "minimax": "https://chat.minimaxi.com/",    
+          "tongyi": "https://www.qianwen.com/",
+          "yuanbao": "https://yuanbao.tencent.com/",
+          "deepseek": "https://chat.deepseek.com/",
+          "wenxin": "https://yiyan.baidu.com/",
+          "xinghuo": "https://xinghuo.xfyun.cn/",
+          "zhipu": "https://chatglm.cn/",
+          "kimi": "https://kimi.moonshot.cn/",
+          "doubao": "https://www.doubao.com/",
+          "chatboxai": "https://web.chatboxai.app/",
+          "coze": "https://www.coze.cn/",
+    
+          "hailuoai": "https://hailuoai.com/",
+          "midjourney": "https://www.midjourney.com/",
+          "leonardo": "https://leonardo.ai/",
+          "runway": "https://runwayml.com/",
+          "sd": "https://stablediffusionweb.com/",
+          "dalle": "https://openai.com/dall-e-3",
+          "ideogram": "https://ideogram.ai/",
+          "firefly": "https://firefly.adobe.com/",
+          "canva": "https://www.canva.com/ai-image-generator/",
+          "remove_bg": "https://www.remove.bg/",
+          "upscaler": "https://www.upscaler.ai/",
+          "suno": "https://suno.com/",
+          "udio": "https://www.udio.com/",
+
+          "ahk_help": "https://wyagd001.github.io/v2/docs/",
+          "ahk_forum": "https://www.autohotkey.com/boards/",
+          "office_vba": "https://learn.microsoft.com/zh-cn/office/vba/api/overview/",
+
+          "jd": "https://www.jd.com/",
+          "xianyu": "https://www.goofish.com/",
+          "taobao": "https://www.taobao.com/",
+
+          "zsxq": "https://wx.zsxq.com/group/1111424852",
+
+          "zhyw": "https://ops.smgtech.net/",
+          "zhlmt": "https://csb.smgtech.net/i/#",
+          "wjx": "https://www.wjx.cn/login.aspx",
+
+          "xiaohongshu": "https://www.xiaohongshu.com/",
+          "qqlive": "https://v.qq.com/",
+          "iqiyi": "https://www.iqiyi.com/",
+          "bilibili": "https://www.bilibili.com/",
+          "douyin": "https://www.douyin.com/"
+
+      },    
+  
+    "applications": {
+      "bilibili": "C:\\Program Files\\bilibili\\哔哩哔哩.exe",
+      "excel": "C:\\Program Files\\Microsoft Office\\root\\Office16\\EXCEL.EXE",
+      "word": "C:\\Program Files\\Microsoft Office\\root\\Office16\\WINWORD.EXE",
+      "powerpoint": "C:\\Program Files\\Microsoft Office\\root\\Office16\\POWERPNT.EXE",
+  
+      "vscode": "C:\\Program Files\\Microsoft VS Code\\Code.exe",
+      "scite": "C:\\Program Files\\AutoHotkey\\SciTE\\SciTE.exe",
+  
+      "chrome": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+  
+      "notepad": "C:\\Windows\\notepad.exe",
+      "everything": "C:\\Program Files\\everything\\Everything.exe",
+      "7zip": "C:\\Program Files\\7-Zip\\7z.exe",
+      "totalcmd": "C:\\Users\\13661\\AppData\\Local\\TotalCMD64\\TotalCMD64.exe",
+  
+      "potplayer": "C:\\Program Files\\DAUM\\PotPlayer\\PotPlayerMini64.exe",
+      "photoshop": "C:\\Program Files\\Adobe\\AdobePhotoshop2023\\Photoshop.exe",
+      "eagle": "C:\\Program Files\\eagle\\eagle.exe",
+      "fxsound": "C:\\Program Files\\FxSound LLC\\FxSound\\FxSound.exe",
+  
+      "wechat": "C:\\Program Files\\Tencent\\Weixin\\Weixin.exe",
+      "wxwork": "C:\\Program Files (x86)\\WXWork\\WXWork.exe",
+      "wemeet": "C:\\Program Files\\Tencent\\WeMeet\\WeMeetApp.exe",
+      "qqlive": "C:\\Program Files\\QQLive\\QQLive.exe",
+      "mailmaster": "C:\\Program Files (x86)\\Netease\\MailMaster\\Application\\mailmaster.exe",
+  
+      "evernote": "C:\\Program Files (x86)\\Yinxiang Biji\\印象笔记\\Evernote.exe",
+      "snipaste": "Snipaste",
+    
+      "youdaodict": "C:\\Users\\13661\\AppData\\Local\\youdao\\dict\\Application\\YoudaoDict.exe",
+  
+      "baidunetdisk": "C:\\Users\\13661\\AppData\\Roaming\\baidu\\BaiduNetdisk\\BaiduNetdisk.exe",
+  
+      "spy": "D:\\system\\green_app\\WindowSpyDpi\\WindowSpyDpi.exe",
+      "notify_creator": "D:\\03_code\\autohotkey\\project\\qwert\\Lib\\NotifyClass-NotifyCreator-main\\Notify Creator.ahk",
+      "xdqy": "C:\\Program Files\\Palantir\\Palantir.exe",
+      "doubao": "C:\\Users\\13661\\AppData\\Local\\Doubao\\Application\\Doubao.exe",
+      "qianwen": "C:\\Users\\13661\\AppData\\Local\\Programs\\Qianwen\\Qianwen.exe"
+    },
+  
+    "processes": {
+      "excel": "EXCEL.EXE",
+      "word": "WINWORD.EXE",
+      "powerpoint": "POWERPNT.EXE",
+  
+      "vscode": "Code.exe",
+      "scite": "SciTE.exe",
+  
+      "chrome": "chrome.exe",
+  
+      "notepad": "notepad.exe",
+      "everything": "Everything.exe",
+  
+      "wechat": "WeChat.exe",
+      "wxwork": "WXWork.exe",
+  
+      "potplayer": "PotPlayerMini64.exe",
+  
+      "snipaste": "Snipaste.exe"
+    },
+  
+    "files": {
+      "duty_table_local": "D:\\04_work\\routine\\排班表\\卫星地球站排班表 - 2025.xls",
+      "pbb_server": "\\\\172.20.1.254\\地球站\\公用\\工作日程表\\卫星地球站排班表.xls",
+  
+      "weekly_report": "D:\\04_work\\routine\\报告\\【周报】2025×王俊涛.xlsx",
+  
+      "assets_management": "D:\\04_work\\assets\\2024固定资产管理.xlsm",
+      "barcode_file": "D:\\04_work\\assets\\01_条码打印\\固定资产条码.xls",
+  
+      "training_template": "D:\\04_work\\routine\\培训\\03_培训资料\\培训模板\\地球站培训记录表模板.xlsx",
+  
+      "operation_manual": "D:\\04_work\\routine\\维护\\上海广播电视台卫星地球站操作应急规范-播出系统V24.10.docx",
+      "maintenance_log": "\\\\172.20.1.254\\地球站\\技术体系\\系统维护工作\\系统维护和变更记录\\维护登录\\2026年维护登记.xlsx",  
+      "shortcut_table": "D:\\system\\qwert\\settings\\shoutcut_table.xlsx",  
+
+      "desktop_notes_1": "Snipaste paste --pos 1920 0 --files D:\\system\\desktop_notes\\vscode_shortcut.png",  
+      "desktop_notes_2": "Snipaste paste --pos 1920 0 --files D:\\system\\desktop_notes\\snipaste_help_1.png",   
+      "desktop_notes_3": "Snipaste paste --pos 1920 0 --files D:\\system\\desktop_notes\\snipaste_help_2.png"
+    },    
+  
+    "server_path": {
+      "pbb_path_server": "\\\\172.20.1.254\\地球站\\公用\\工作日程表",
+      "wh_path_server": "\\\\172.20.1.254\\地球站\\技术体系\\系统维护工作\\系统维护和变更记录\\维护登录\\",
+      "gr_path_server": "\\\\172.20.1.254\\地球站个人资料\\工程师\\王俊涛"
+    },
+  
+    "path": {
+      "layout_json": "\\settings\\layout_frames.json",
+      "preset_layouts_json": "\\settings\\preset_layouts.json",
+      "d_drive": "D:\\",
+      "download": "D:\\02_cache\\download",
+      "baidu_download": "D:\\02_cache\\BaiduNetdiskDownload",
+  
+      "routine": "D:\\04_work\\routine", 
+      "rcgz": "D:\\日常工作",
+      "work_project": "D:\\04_work\\project",
+  
+      "ahk_doc": "D:\\03_code\\autohotkey\\project\\qwert\\doc",
+      "config_folder": "D:\\03_code\\autohotkey\\project\\qwert",
+      "vba_code": "D:\\03_编程开发\\01_AutoHotkey\\01_我的代码\\qwert\\vba",
+
+      "project": "D:\\工作\\项目",
+      "system": "D:\\system",
+      "inbox": "D:\\system\\inbox",
+  
+      "screenshot": "D:\\02_cache\\screenshot",
+      "image": "D:\\03_code\\autohotkey\\project\\qwert\\img",
+      "system_data": "D:\\system",
+      "desktop_notes": "D:\\system\\desktop_notes"
+    },
+  
+    "ocr_files": {
+      "png_file": "D:\\02_cache\\screenshot\\OCR.png",
+      "bmp_file": "D:\\02_cache\\screenshot\\OCR.bmp", 
+      "txt_file": "D:\\02_cache\\screenshot\\OCR.txt"
+    },
+    
+    "screenshot": {
+      "screenshot_path": "D:\\temp",
+      "bmp_file": "D:\\02_cache\\screenshot\\OCR.bmp", 
+      "txt_file": "D:\\02_cache\\screenshot\\OCR.txt"
+    },
+  
+    "shell_folders": {
+      "recycle_bin": "::{645FF040-5081-101B-9F08-00AA002F954E}",
+      "control_panel": "21EC2020-3AEA-1069-A2DD-08002B30309D",
+      "my_computer": "20D04FE0-3AEA-1069-A2D8-08002B30309D",
+      "desktop": "B4BFCC3A-DB2C-424C-B029-7FE99A87C641",
+      "documents": "FDD39AD0-238F-46AF-ADB4-6C85480369C7",
+      "downloads": "374DE290-123F-4565-9164-39C4925E467B"
+    },
+  
+    "fonts": {
+      "chinese_font_1": "MiSans light",
+      "chinese_font_2": "阿里巴巴普惠体 3.0 55 Regular",
+      "chinese_font_3": "微软雅黑",
+      "chinese_font_4": "思源宋体 CN",
+      "chinese_font_5": "方正清刻本悦宋简体",
+      "chinese_font_6": "喜鹊招牌体",
+      "chinese_font_7": "字酷堂清楷 简",
+      "chinese_font_8": "字体圈欣意冠黑体",
+
+      "english_font_1": "Fira Code light",
+      "english_font_2": "Gilroy Regular",
+      "english_font_3": "微软雅黑",
+      "english_font_4": "思源宋体 CN",
+      "english_font_5": "方正清刻本悦宋简体",
+      "english_font_6": "喜鹊招牌体",
+      "english_font_7": "字酷堂清楷 简",
+      "english_font_8": "字体圈欣意冠黑体"
+    },
+  
+    "system": {
+      "english_font": "Gilroy Regular",
+      "bold_english_font": "Gilroy Bold",
+      "english_font_option_1": "Gilroy Regular",
+      "english_font_option_2": "Gilroy Regular",
+      "english_font_option_3": "Gilroy Regular",
+      "english_font_option_4": "Gilroy Regular",
+      
+      "chinese_font": "MiSans Normal",
+      "bold_chinese_font": "MiSans Heavy",
+      "chinese_font_option_1": "方正清刻本悦宋简体",
+      "chinese_font_option_2": "微软雅黑",
+      "chinese_font_option_3": "Gilroy Regular",
+      "chinese_font_option_4": "Gilroy Regular",
+
+      "server_ip": "172.20.1.254",
+      "magic_deck": "D:\\system_data\\magic_deck\\magic_deck.pptx",
+  
+      "step_paste": "step_paste(1) / step_paste(2) / step_paste(3) / step_paste(4) / step_paste(5) / step_paste(6) / step_paste(7) / step_paste(8) / step_paste(9)"
+    },
+
+  "url_lovart": {
+    "payload": "https://www.lovart.ai/zh/home",
+    "label": "Lovart",
+    "kind": "url"
+  },
+  "url_claude": {
+    "payload": "https://claude.ai/",
+    "label": "Claude",
+    "kind": "url"
+  },
+  "url_chatgpt": {
+    "payload": "https://chatgpt.com/",
+    "label": "ChatGPT",
+    "kind": "url"
+  },
+  "url_gemini": {
+    "payload": "https://gemini.google.com/",
+    "label": "Gemini",
+    "kind": "url"
+  },
+  "url_copilot": {
+    "payload": "https://copilot.cloud.microsoft/",
+    "label": "Copilot",
+    "kind": "url"
+  },
+   
+  "ch_font1": "MiSans light",
+  "ch_font2": "阿里巴巴普惠体 3.0 55 Regular",
+  "ch_font3": "微软雅黑",
+  "ch_font4": "思源宋体 CN",
+  "ch_fonts[5]": "方正清刻本悦宋简体",
+  "ch_font6": "喜鹊招牌体",
+  "ch_font7": "字酷堂清楷 简",
+  "ch_font8": "字体圈欣意冠黑体",
+
+  "en_font1": "Fira Code light",
+  "en_fonts[2]": "Gilroy Regular",
+  "en_font3": "微软雅黑",
+  "en_font4": "思源宋体 CN",
+  "en_font5": "方正清刻本悦宋简体",
+  "en_font6": "喜鹊招牌体",
+  "en_font7": "字酷堂清楷 简",
+  "en_font8": "字体圈欣意冠黑体"
+  }
+

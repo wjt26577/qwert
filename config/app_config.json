@@ -1,0 +1,199 @@
+﻿{
+"app_excel": {
+  "payload": "C:\\Program Files\\Microsoft Office\\root\\Office16\\EXCEL.EXE",
+  "label": "Excel",
+  "kind": "app"
+},
+
+"app_word": {
+  "payload": "C:\\Program Files\\Microsoft Office\\root\\Office16\\WINWORD.EXE",
+  "label": "Word",
+  "kind": "app"
+},
+
+"app_ppt": {
+  "payload": "C:\\Program Files\\Microsoft Office\\root\\Office16\\POWERPNT.EXE",
+  "label": "PowerPoint",
+  "kind": "app"
+},
+
+"app_vscode": {
+  "payload": "C:\\Program Files\\Microsoft VS Code\\Code.exe",
+  "label": "Visual Studio Code",
+  "kind": "app"
+},
+
+"app_scite": {
+  "payload": "C:\\Program Files\\AutoHotkey\\SciTE\\SciTE.exe",
+  "label": "SciTE",
+  "kind": "app"
+},
+
+"app_chrome": {
+  "payload": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+  "label": "Chrome",
+  "kind": "app"
+},
+
+"app_notepad": {
+  "payload": "C:\\Windows\\notepad.exe",
+  "label": "记事本",
+  "kind": "app"
+},
+
+"app_everything": {
+  "payload": "C:\\Program Files\\everything\\Everything.exe",
+  "label": "Everything",
+  "kind": "app"
+},
+
+"app_7zip": {
+  "payload": "C:\\Program Files\\7-Zip\\7z.exe",
+  "label": "7-Zip",
+  "kind": "app"
+},
+
+"app_totalcmd": {
+  "payload": "C:\\Users\\13661\\AppData\\Local\\TotalCMD64\\TotalCMD64.exe",
+  "label": "Total Commander",
+  "kind": "app"
+},
+
+"app_potplayer": {
+  "payload": "C:\\Program Files\\DAUM\\PotPlayer\\PotPlayerMini64.exe",
+  "label": "PotPlayer",
+  "kind": "app"
+},
+
+"app_photoshop": {
+  "payload": "C:\\Program Files\\Adobe\\AdobePhotoshop2023\\Photoshop.exe",
+  "label": "Photoshop",
+  "kind": "app"
+},
+
+"app_eagle": {
+  "payload": "C:\\Program Files\\eagle\\eagle.exe",
+  "label": "Eagle",
+  "kind": "app"
+},
+
+"app_fxsound": {
+  "payload": "C:\\Program Files\\FxSound LLC\\FxSound\\FxSound.exe",
+  "label": "FxSound",
+  "kind": "app"
+},
+
+"app_wechat": {
+  "payload": "C:\\Program Files\\Tencent\\Weixin\\Weixin.exe",
+  "label": "微信",
+  "kind": "app"
+},
+
+"app_wxwork": {
+  "payload": "C:\\Program Files (x86)\\WXWork\\WXWork.exe",
+  "label": "企业微信",
+  "kind": "app"
+},
+
+"app_wemeet": {
+  "payload": "C:\\Program Files\\Tencent\\WeMeet\\WeMeetApp.exe",
+  "label": "腾讯会议",
+  "kind": "app"
+},
+
+"app_mailmaster": {
+  "payload": "C:\\Program Files (x86)\\Netease\\MailMaster\\Application\\mailmaster.exe",
+  "label": "网易邮箱大师",
+  "kind": "app"
+},
+
+"app_evernote": {
+  "payload": "C:\\Program Files (x86)\\Yinxiang Biji\\印象笔记\\Evernote.exe",
+  "label": "印象笔记",
+  "kind": "app"
+},
+
+"app_snipaste": {
+  "payload": "Snipaste",
+  "label": "Snipaste",
+  "kind": "app"
+},
+
+"app_youdaodict": {
+  "payload": "C:\\Users\\13661\\AppData\\Local\\youdao\\dict\\Application\\YoudaoDict.exe",
+  "label": "有道词典",
+  "kind": "app"
+},
+
+"app_baidu": {
+  "payload": "C:\\Users\\13661\\AppData\\Roaming\\baidu\\BaiduNetdisk\\BaiduNetdisk.exe",
+  "label": "百度网盘",
+  "kind": "app"
+},
+
+"app_spy": {
+  "payload": "D:\\system\\green_app\\WindowSpyDpi\\WindowSpyDpi.exe",
+  "label": "Window Spy",
+  "kind": "app"
+},
+
+"app_notify_creator": {
+  "payload": "D:\\03_code\\autohotkey\\project\\qwert\\Lib\\NotifyClass-NotifyCreator-main\\Notify Creator.ahk",
+  "label": "Notify Creator",
+  "kind": "app"
+},
+
+"app_xdqy": {
+  "payload": "C:\\Program Files\\Palantir\\Palantir.exe",
+  "label": "新东方云教室",
+  "kind": "app"
+},
+
+"app_doubao": {
+  "payload": "C:\\Users\\13661\\AppData\\Local\\Doubao\\Application\\Doubao.exe",
+  "label": "字节豆包",
+  "kind": "app"
+},
+
+"app_cherrystudio": {
+  "payload": "C:\\Program Files\\Cherry Studio\\Cherry Studio.exe",
+  "label": "Cherry Studio",
+  "kind": "app"
+},
+
+"app_typora": {
+  "payload": "C:\\Program Files\\Typora\\Typora.exe",
+  "label": "Typora",
+  "kind": "app"
+},
+
+"app_powershell": {
+  "payload": "powershell.exe",
+  "label": "PowerShell",
+  "kind": "app"
+},
+
+"app_powershell_admin": {
+  "payload": "*RunAs powershell.exe",
+  "label": "PowerShell@管理员身份",
+  "kind": "app"
+},
+
+"app_powershell_terminal": {
+  "payload": "wt.exe -p PowerShell",
+  "label": "PowerShell@终端",
+  "kind": "app"
+},
+
+"app_cmd": {
+  "payload": "cmd",
+  "label": "命令提示符",
+  "kind": "app"
+},
+
+"app_qianwen": {
+  "payload": "C:\\Users\\13661\\AppData\\Local\\Programs\\QianwenApp\\Qianwen.exe",
+  "label": "千   问",
+  "kind": "app"
+}
+}

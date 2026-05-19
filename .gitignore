@@ -1,0 +1,8 @@
+settings/secrets.json
+settings/clipboard_history.json
+settings/clip_history.json
+config/secrets.json
+config/clipboard_history.json
+config/clip_history.json
+~$*
+*.tmp

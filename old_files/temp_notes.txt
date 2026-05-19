@@ -1,0 +1,2233 @@
+
+  
+      
+      
+      
+      
+      
+      ai_tools/
+├── text_generator/           # 文本生成（GPT、Claude、Gemini、DeepSeek 等）
+├── image_generator/          # 图像生成（Midjourney、Stable Diffusion、Lovart）
+├── video_generator/          # 视频生成（Runway ML、Pika、Sora（待开放）、Kaiber）
+├── audio_generator/          # 音频/AI语音（ElevenLabs、Suno AI、Udio、Murf）
+├── data_visualization/       # 数据可视化 & AI图表（爱图表、ChartAI、Vega-Lite + AI）
+├── coding_tool/              # 编程辅助（Copilot、Cursor、CodeLlama、Windsurf）
+├── model_aggregation/        # 模型聚合网关（统一API调用多模型，如你描述的平台）
+├── intelligent_agent/        # 智能体框架与应用（LangChain、CrewAI、AutoGPT、Dify）
+├── multimodal_tool/          # 多模态理解与生成（LLaVA、Qwen-VL、Kosmos-2、GPT-4V）
+├── design_tool/              # AI设计助手（Figma AI、Adobe Firefly、Canva Magic Studio）
+├── research_assistant/       # AI科研助手（Elicit、Scite、Consensus、Perplexity Pro）
+└── infrastructure/           # AI基础设施（推理服务、微调平台、向量库、MLOps：Replicate、Modal、LanceDB）
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      ; #region 启动程序1
+#Requires AutoHotkey v2.0
+#SingleInstance Force
+
+; 设置优先级和坐标模式
+ProcessSetPriority "High"
+CoordMode("Mouse", "Screen")
+CoordMode("Pixel", "Screen")
+CoordMode("ToolTip", "Screen") 
+
+; 配置托盘图标
+
+if (A_IsAdmin && FileExist("img\chili.ico")) 
+    TraySetIcon("img\chili.ico", , 0)
+
+if (!A_IsAdmin && FileExist("img\cherries.ico"))
+    TraySetIcon("img\cherries.ico", , 0)  
+
+; #Include <JSON>
+
+global super_idol := True 
+global clipboard_history := []
+global max_history := 10
+
+   
+
+try {
+
+    static_config := Map()
+    static_config := json.load(FileRead("settings\settings.json"))
+
+    json_config := Map()
+    json_config := json.load(FileRead("settings\settings.json"))
+
+ 
+    ; --- 字体常量 ---
+
+    cmd_desktop_notes_1 := "Snipaste paste --files D:\system\desktop_notes\vscode_shortcut.png"
+    cmd_desktop_notes_2 := "Snipaste paste --files D:\system\desktop_notes\snipaste_help_1.png"
+    cmd_desktop_notes_3 := "Snipaste paste --files D:\system\desktop_notes\snipaste_help_2.png"
+
+
+    path_layout_json := "\settings\layout_frames.json"
+    path_preset_layouts_json := "\settings\preset_layouts.json"
+
+} catch as err {
+    MsgBox(Format("Error: {1}`nFile: {2}`nLine: {3}", err.message, err.file, err.Line))
+}
+
+global baidu_ai := Map(
+    "token_url", "https://aip.baidubce.com/oauth/2.0/token", 
+    "ocr", Map(
+        "api_key", "cP0vgrx0Cu86odtEpmn9rz4Y",
+        "secret_key", "PLH5jHjPWmi6J2T8i3Zsd6p7Djqjkeqa",
+        "token_url", "https://aip.baidubce.com/oauth/2.0/token",
+        "api_url", "https://aip.baidubce.com/rest/2.0/ocr/v1/accurate_basic"
+    ),
+    "accurate_ocr", Map(
+        "api_key", "cP0vgrx0Cu86odtEpmn9rz4Y",    
+      
+      
+      
+      
+      
+      
+      ; #region 启动程序1
+#Requires AutoHotkey v2.0
+#SingleInstance Force
+
+; 设置优先级和坐标模式
+ProcessSetPriority "High"
+CoordMode("Mouse", "Screen")
+CoordMode("Pixel", "Screen")
+CoordMode("ToolTip", "Screen") 
+
+; 配置托盘图标
+
+if (A_IsAdmin && FileExist("img\chili.ico")) 
+    TraySetIcon("img\chili.ico", , 0)
+
+if (!A_IsAdmin && FileExist("img\cherries.ico"))
+    TraySetIcon("img\cherries.ico", , 0)  
+
+; #Include <JSON>
+
+global super_idol := True 
+global clipboard_history := []
+global max_history := 10
+
+   
+
+try {
+
+    static_config := Map()
+    static_config := json.load(FileRead("settings\settings.json"))
+
+    json_config := Map()
+    json_config := json.load(FileRead("settings\settings.json"))
+
+ 
+    ; --- 字体常量 ---
+
+    cmd_desktop_notes_1 := "Snipaste paste --files D:\system\desktop_notes\vscode_shortcut.png"
+    cmd_desktop_notes_2 := "Snipaste paste --files D:\system\desktop_notes\snipaste_help_1.png"
+    cmd_desktop_notes_3 := "Snipaste paste --files D:\system\desktop_notes\snipaste_help_2.png"
+
+
+    path_layout_json := "\settings\layout_frames.json"
+    path_preset_layouts_json := "\settings\preset_layouts.json"
+
+} catch as err {
+    MsgBox(Format("Error: {1}`nFile: {2}`nLine: {3}", err.message, err.file, err.Line))
+}
+
+global baidu_ai := Map(
+    "token_url", "https://aip.baidubce.com/oauth/2.0/token", 
+    "ocr", Map(
+        "api_key", "cP0vgrx0Cu86odtEpmn9rz4Y",
+        "secret_key", "PLH5jHjPWmi6J2T8i3Zsd6p7Djqjkeqa",
+        "token_url", "https://aip.baidubce.com/oauth/2.0/token",
+        "api_url", "https://aip.baidubce.com/rest/2.0/ocr/v1/accurate_basic"
+    ),
+    "accurate_ocr", Map(
+        "api_key", "cP0vgrx0Cu86odtEpmn9rz4Y",
+        "secret_key", "PLH5jHjPWmi6J2T8i3Zsd6p7Djqjkeqa",
+        "token_url", "https://aip.baidubce.com/oauth/2.0/token",
+        "api_url", "https://aip.baidubce.com/rest/2.0/ocr/v1/accurate_basic"
+    ),
+    "general_ocr", Map(
+        "api_key", "cP0vgrx0Cu86odtEpmn9rz4Y",
+        "secret_key", "PLH5jHjPWmi6J2T8i3Zsd6p7Djqjkeqa",
+        "token_url", "https://aip.baidubce.com/oauth/2.0/token",
+        "api_url", "https://aip.baidubce.com/rest/2.0/ocr/v1/general_basic"
+    ),
+    "remove_handwriting_ocr", Map(
+        "api_key", "cP0vgrx0Cu86odtEpmn9rz4Y",
+        "secret_key", "PLH5jHjPWmi6J2T8i3Zsd6p7Djqjkeqa",
+        "token_url", "https://aip.baidubce.com/oauth/2.0/token",
+        "api_url", "https://aip.baidubce.com/rest/2.0/ocr/v1/remove_handwriting"
+    ),
+    "translation", Map(
+        "api_key", "zXa3W3adFJuOWbx4M7quObOs",
+        "secret_key", "lD2XV8xDVeTJKIyvxjoy4ZrhSHgQw7iA",
+        "token_url", "https://aip.baidubce.com/oauth/2.0/token",
+        "api_url", "https://aip.baidubce.com/rpc/2.0/mt/texttrans/v1"
+    ),
+    "text_translation", Map(
+        "api_key", "zXa3W3adFJuOWbx4M7quObOs",
+        "secret_key", "lD2XV8xDVeTJKIyvxjoy4ZrhSHgQw7iA",
+        "token_url", "https://aip.baidubce.com/oauth/2.0/token",
+        "api_url", "https://aip.baidubce.com/rpc/2.0/mt/texttrans/v1"
+    ),
+    "picture_translation", Map(
+        "api_key", "zXa3W3adFJuOWbx4M7quObOs",
+        "secret_key", "lD2XV8xDVeTJKIyvxjoy4ZrhSHgQw7iA",
+        "token_url", "https://aip.baidubce.com/oauth/2.0/token",
+        "api_url", "https://aip.baidubce.com/file/2.0/mt/pictrans/v1"
+    )
+)
+
+
+global ch_fonts := [
+    "MiSans light", 
+    "阿里巴巴普惠体 3.0 55 Regular", 
+    "微软雅黑", 
+    "思源宋体 CN", 
+    "方正清刻本悦宋简体", 
+    "喜鹊招牌体", 
+    "字酷堂清楷 简", 
+    "字体圈欣意冠黑体"]
+                    
+global en_fonts := [
+    "Fira Code light",
+    "Gilroy Regular",
+    "微软雅黑",
+    "思源宋体 CN",
+    "方正清刻本悦宋简体",
+    "喜鹊招牌体",
+    "字酷堂清楷 简",
+    "字体圈欣意冠黑体"]
+
+
+; #Include <load_settings>
+
+#Include <global_vars>
+
+
+#Include <function>
+#Include <lib_office_function>
+#Include <Notify>
+
+#Include <baidu_api>
+
+#Include <class_http>
+#Include <DPI>
+#Include <Gdip_All>
+#Include <split_ppt>
+#Include <Class_SQLiteDB> 
+
+; MsgBox(A_Now, , "T2")
+
+; 显示启动信息
+try { 
+    center_info("Qwert is running as " . (A_IsAdmin ? "admin" : "normal"))  
+
+    } catch as err {
+        MsgBox(Format("Error: {1}`nFile: {2}`nLine:  {3}", err.message, err.file, err.Line))
+    }    
+
+
+
+; ---------- 监听剪贴板变化 ----------
+OnClipboardChange(clip_changed)
+
+; 当脚本退出时，自动执行 SaveHistory 函数
+OnExit(save_clipboard_history)
+
+load_clipboard_history() 
+
+load_clipboard_history() {  
+
+    try {
+
+        clipboard_history_map := Map()
+        clipboard_history_map := json.load(FileRead("settings\clipboard_history.json"))
+
+        if clipboard_history_map.has("1")
+            clipboard_history.Push(clipboard_history_map["1"])
+        else
+            clipboard_history.Push("#1_clip is empty")
+
+        if clipboard_history_map.has("2")
+            clipboard_history.Push(clipboard_history_map["2"])
+        else
+            clipboard_history.Push("#2_clip is empty")
+
+        if clipboard_history_map.has("3")
+            clipboard_history.Push(clipboard_history_map["3"])
+        else
+            clipboard_history.Push("#3_clip is empty")
+
+        if clipboard_history_map.has("4")
+            clipboard_history.Push(clipboard_history_map["4"])
+        else
+            clipboard_history.Push("#4_clip is empty")
+
+        if clipboard_history_map.has("5")
+            clipboard_history.Push(clipboard_history_map["5"])
+        else
+            clipboard_history.Push("#5_clip is empty")
+
+        if clipboard_history_map.has("6")
+            clipboard_history.Push(clipboard_history_map["6"])
+        else
+            clipboard_history.Push("#6_clip is empty")
+
+        if clipboard_history_map.has("7")
+            clipboard_history.Push(clipboard_history_map["7"])
+        else
+            clipboard_history.Push("#7_clip is empty")
+
+        if clipboard_history_map.has("8")
+            clipboard_history.Push(clipboard_history_map["8"])
+        else
+            clipboard_history.Push("#8_clip is empty")
+
+        if clipboard_history_map.has("9")
+            clipboard_history.Push(clipboard_history_map["9"])
+        else
+            clipboard_history.Push("#9_clip is empty")
+
+        if clipboard_history_map.has("10")
+            clipboard_history.Push(clipboard_history_map["10"])
+        else
+            clipboard_history.Push("#10_clip is empty")
+    }
+
+
+}
+
+clip_changed(data_type) {
+    try {
+        global clipboard_history, max_history
+
+        ; 只处理文本类型
+        if (data_type != 1)
+            return
+
+        content := A_Clipboard
+        
+        ; 跳过空内容
+        if (content = "")
+            return
+
+        ; 插入到开头（最新的在前）
+        clipboard_history.InsertAt(1, content)
+
+        ; 超出上限则删除最旧的
+        while (clipboard_history.Length > max_history)
+            clipboard_history.Pop()
+    } catch
+        throw
+}
+
+ 
+
+; --- 保存函数 ---
+save_clipboard_history(*) {
+    global clipboard_history  
+    try {
+        clip_map := Map()
+
+        loop 10 {
+            if clipboard_history.has(a_index)
+                clip_map[a_index] := clipboard_history[a_index]
+           else
+                clip_map[a_index] := "nothing"
+            
+        }
+
+        ; 直接覆盖保存
+        json_text := json.dumps(clip_map, 2)
+        json_file := FileOpen("settings\clipboard_history.json", "w") 
+        json_file.Write(json_text)
+        json_file.Close() 
+
+    } catch as err {
+        MsgBox(Format("Error: {1}`nFile: {2}`nLine:  {3}", err.message, err.file, err.Line))
+    }    
+}
+
+
+
+
+
+
+; #endregion
+   
+; #region suspend_exempt
+#SuspendExempt
+
+    ~LButton & 3:: {
+        MouseClick(,,,,, "U")
+        MouseAction("slow", "reload_me", "suspend_me", "ExitApp", "func_cancel")
+    }
+    
+    suspend_me() {
+        Suspend
+
+        if A_IsSuspended
+            show_info_red("QWERT is suspending ...")
+        else 
+            center_info("QWERT is recovering ...")
+    }
+
+    reload_me() { 
+        SendInput("{Escape}")
+
+        If WinActive("ahk_exe Code.exe") {
+            SendInput("^s")
+            Sleep(50)
+        }  
+        Reload
+    }
+
+    func_cancel() {
+        a := 0
+    }
+
+#SuspendExempt False
+; #endregion 
+
+
+
+; #region visual_studio_code
+#HotIf WinActive("ahk_exe Code.exe")
+    add_brace() {
+        try {
+            SendInput(" {{}{Down}{End}`n{`}}")
+        } catch as err {
+            MsgBox("增加大括号失败: " . err.Message)
+        }
+    }
+    Tab & LButton:: SendInput("!+{LButton}")
+    
+    XButton1 & 2:: SendInput("^k^]")
+    XButton1 & 3:: SendInput("^k^0") 
+    F24 & f:: SendInput("^c^r{Right}{Enter}^v{Enter}")  
+
+    ; XButton1:: fast_cat("+{MButton}", "+{LButton}")
+
+    F24:: fast_cat("+{MButton}", "+{LButton}")
+
+
+   
+
+    :*:bbb:: {
+        try {
+            SendInput(" {{}{Delete}{Down}{End}`n+{Tab}{`}}")
+        } catch as err {
+            MsgBox("增加大括号失败: " . err.Message)
+        }
+    }
+
+    
+    ; :*:bbb:: {
+    ;     try {
+    ;         SendInput(" {{}{Delete}{Down}{End}`n+{Tab}{`}}")
+    ;     } catch as err {
+    ;         MsgBox("增加大括号失败: " . err.Message)
+    ;     }
+    ; }
+
+
+
+
+    ; :*:bbb:: {
+    ;     try {
+    ;         SendInput(" {{}{Delete}{Down}{End}`n+{Tab}{`}}")
+    ;     } catch as err {
+    ;         MsgBox("增加大括号失败: " . err.Message)
+    ;     }
+    ; }
+
+
+
+    :*:eee::{Home 2}+{End}^v
+    :*:sss::+{End}^c
+    :*:ddd::+{End}^v
+    :*:ssg:: {
+        SendText("`nMsgBox(A_Now, , `"T2`")") 
+            SendInput("{Left 9}+{Left 5}")
+    }
+    
+    :*:ssf:: {
+        text := "
+        (
+        function() {
+            try {              
+            } catch as err {
+                MsgBox("失败: " . err.Message)    
+            }
+        }
+        )"    
+        send_by_clipboard(text)
+        SendInput("{Left 1}{Up 5}+{Right 8}")
+
+    }
+
+    :*:shh::center_info(      ; 快速输入show_info函数
+    ; :*:ssf::`nif (expression`s==`sTrue)`s`{{}`n`{}} {Left 22}+{Left 10}  ; 快速输入show_info函数带引号
+    Tab & j:: SendInput("^{Right 2}^+{Left}")
+
+    ; F23:: {
+    ;     SendInput("!+{LButton}")
+    ; } 
+
+    ; F23 & r:: {
+    ;     SendInput("^!+l")
+    ; }  
+
+    ; F23 & g:: {
+    ;     SendInput("^!+u")
+    ; }   
+
+ 
+; smart_delete() {  
+;     try {
+;         if WinActive("ahk_exe Code.exe") {
+;             ("inpt | ^+k | 删除整行", "inpt | ^+!2 | 删除光标右侧内容", "inpt | ^+!1 | 删除光标左侧内容")    
+;         } else {
+;             ("inpt | {Home}+{End}{Delete} | 删除整行", "inpt | +{End}{Delete} | 删除光标右侧内容", "inpt | +{Home}{Delete} | 删除光标左侧内容")    
+;         }
+;     } catch as err
+;         Msgbox(err.Message)       
+; } 
+ 
+#HotIf
+; #endregion
+
+; #region super_idol
+#HotIf super_idol
+~q:: false_idol()
+~w:: false_idol()
+~e:: false_idol()
+~r:: false_idol()
+~t:: false_idol()
+~a:: false_idol()
+~s:: false_idol()
+~d:: false_idol()
+
+~g:: false_idol()
+~z:: false_idol()
+~x:: false_idol()
+~c:: false_idol()
+
+~b:: false_idol()
+~y:: false_idol()
+~u:: false_idol()
+~i:: false_idol()
+~o:: false_idol()
+~p:: false_idol()
+~h:: false_idol()
+~j:: false_idol()
+~k:: false_idol()
+~l:: false_idol()
+~m:: false_idol()
+~n:: false_idol()
+
+f::fast_cat("copy_format", "func_ctrlx")
+v::fast_cat("ct_v")
+
+
+
+
+#HotIf 
+; #endregion
+
+; #region Shift, CapsLock, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0
+#HotIf 1
+    :*:eee::{Home 2}+{End}^v
+    :*?:sss::+{End}^c
+    :*?:ddd::+{End}^v
+    :*:ggg::{
+        SendInput("^v")
+    }
+    :*?:wjtwjt::wjtwjt@gmail.com
+    :*?:huahua::hu@903L2
+    :*?:ccc::13661896375@163.com
+    :*?:ttt::王俊涛
+
+      
+   
+    
+    
+    :*?:[[::]
+    :*?:dss::王俊涛
+    :*?:ooo::[
+    :*?:ssd:: {
+        Send FormatTime(, "yyMMdd")  ;  看起来会像 9/1/2005 3:53 PM 这样
+    }
+
+    :*:btw::{
+        MsgBox ThisHotkey  ; 报告 :X:btw
+    }
+
+
+   
+
+    ; ~CapsLock:: set_global("super_idol", false, "fn_mode", false), center_info(GetKeyState("CapsLock", "T") ? "大  写" : "小  写") 
+    ; ^7:: Send(Chr(0x4E28))
+
+    ; F23:: {        
+    ;     if WinActive("ahk_group video_group") {
+    ;         SendInput("{Left}")
+    ;     } else if (WinActive("ahk_class CabinetWClass")) {
+    ;         SendInput("!{Up}")
+    ;     }
+    ; }   
+    Tab & LButton:: SendInput("+{LButton}")
+  
+    
+    ~LButton:: set_global("super_idol", true)
+    RButton:: set_global("super_idol", false), SendInput("{RButton}")
+    XButton1:: SendInput("{XButton1}")
+    XButton2:: SendInput("{XButton2}")               
+
+    CapsLock:: set_global("super_idol", false), english_input()
+    Ctrl:: set_global("super_idol", false), english_input()
+    Shift:: set_global("super_idol", false), toggle_input_method()
+    Space:: SendInput("{Space}")
+    Esc:: SendInput("{Esc}")
+    Enter:: smart_enter()    
+
+
+    Tab:: SendInput("{Tab}")
+
+
+    ; CapsLock & LButton:: ^LButton
+
+
+
+
+
+
+
+2:: send_2_or_delete()
+3:: send_enter_or_space()
+4:: send_3_or_backspace()
+7:: SendInput("[")
+8:: send_pgdn_or_IME()
+9:: send_pgup_or_esc()
+
+
+    >^:: SendInput(">")
+
+  
+    >^7:: SendInput("{^}")
+    >^8:: SendInput("8")
+    >^9:: Send(Chr(0x4E28))
+    >^y:: SendInput("``")
+    >^u:: SendInput("?")
+    >^i:: SendInput("'")
+    >^o:: SendInput("[") 
+    >^p:: SendInput("]") 
+    >^h:: SendInput("\")
+    >^j:: SendInput(", ")
+    >^k:: SendInput(".")
+    >^l:: step_clip()    
+    >^;:: SendInput(".")
+    >^n:: SendInput("<")
+    >^m:: SendInput(">")
+
+    ^Tab:: SendInput("^{Tab}") 
+    +Tab:: SendInput("+{Tab}") 
+    !Tab:: SendInput("!{Tab}")
+    #Tab:: SendInput("#{Tab}")
+    ^+Tab:: SendInput("^+{Tab}")
+    ^!Tab:: SendInput("^!{Tab}")
+    ^#Tab:: SendInput("^#{Tab}") 
+    +!Tab:: SendInput("+!{Tab}") 
+    +#Tab:: SendInput("+#{Tab}") 
+    !#Tab:: SendInput("!#{Tab}") 
+    Tab & 7:: do_nothing()
+    Tab & 8:: do_nothing()
+    Tab & 9:: do_nothing()
+    Tab & y:: do_nothing()
+    Tab & u:: do_nothing()
+    Tab & i:: do_nothing()
+    Tab & o:: do_nothing()
+    Tab & p:: do_nothing()
+    Tab & h:: do_nothing()
+    Tab & j:: do_nothing()
+    Tab & k:: do_nothing()
+    Tab & l:: do_nothing()
+    Tab & n:: do_nothing()
+    Tab & m:: do_nothing()
+
+    ^Space:: SendInput("^{Space}") 
+    +Space:: SendInput("+{Space}") 
+    !Space:: SendInput("!{Space}")
+    #Space:: SendInput("#{Space}")
+    ^+Space:: SendInput("^+{Space}")
+    ^!Space:: SendInput("^!{Space}")
+    ^#Space:: SendInput("^#{Space}") 
+    +!Space:: SendInput("+!{Space}") 
+    +#Space:: SendInput("+#{Space}") 
+    !#Space:: SendInput("!#{Space}") 
+
+    Space & 2:: SendInput("@")
+    Space & 3:: SendInput("{#}")
+    Space & 4:: SendInput("$")
+    Space & q:: SendText("q")
+    Space & w:: SendInput("6")       
+    Space & e:: SendInput("7")       
+    Space & r:: SendInput("8")      
+    Space & t:: SendInput("9") 
+    Space & a:: SendInput("1")
+    Space & s:: SendInput("2")
+    Space & d:: SendInput("3")
+    Space & f:: SendInput("4")
+    Space & g:: SendInput("5")
+    Space & z:: SendInput("{+}") 
+    Space & x:: SendInput("-")  
+    Space & c:: SendText("_")
+    Space & v:: SendInput("0")   
+    Space & b:: SendText(".")
+
+    Space & 7:: SendInput("&")
+    Space & 8:: SendInput("*")
+    Space & 9:: SendInput("|")
+    Space & y:: SendInput("~")
+    Space & u:: SendInput("{!}")
+    Space & i:: SendInput("`"")
+    Space & o:: SendInput("{{}")
+    Space & p:: SendInput("{`}}")
+    Space & h:: SendInput("/")  
+    Space & j:: SendInput("=") 
+    Space & k:: SendInput("(")  
+    Space & l:: SendInput(")") 
+    Space & `;:: SendInput("`;")
+    Space & n:: SendInput(":")
+    Space & m:: SendInput("%")
+    Space & Esc:: SendInput("+{Esc}")
+    Space & Tab:: SendInput("+{Tab}") 
+    Space & Ctrl:: SendInput("+{Ctrl}") 
+    Space & Shift:: do_nothing()
+    Space & Enter:: SendInput("+{Enter}")   
+    Space & LButton:: SendInput("+{LButton}")
+    Space & RButton:: SendInput("+{RButton}")
+    Space & XButton1:: do_nothing()
+    Space & XButton2:: do_nothing()
+    Space & F23:: do_nothing()
+    Space & F24:: do_nothing()  
+    Space & MButton:: SendInput("+{MButton}") 
+
+    ^Enter:: SendInput("^{Enter}") 
+    +Enter:: SendInput("+{Enter}") 
+    !Enter:: SendInput("!{Enter}")
+    #Enter:: SendInput("#{Enter}")
+    ^+Enter:: SendInput("^+{Enter}")
+    ^!Enter:: SendInput("^!{Enter}")
+    ^#Enter:: SendInput("^#{Enter}") 
+    +!Enter:: SendInput("+!{Enter}") 
+    +#Enter:: SendInput("+#{Enter}") 
+    !#Enter:: SendInput("!#{Enter}") 
+
+    Enter & 1:: do_nothing()
+    Enter & 2:: SendInput("!{Enter}")
+    Enter & 3:: SendInput("!{Enter}")
+    Enter & 4:: do_nothing()
+    Enter & q:: do_nothing()
+    Enter & w:: do_nothing() 
+    Enter & e:: SendInput("{Up}")
+    Enter & r:: SendInput("^z")
+    Enter & t:: SendInput("^y")
+    Enter & a:: SendInput("{Home}") 
+    Enter & s:: SendInput("{Left}")
+    Enter & d:: SendInput("{Down}")
+    Enter & f:: SendInput("{Right}")
+    Enter & g:: do_nothing()
+    Enter & z:: do_nothing()
+    Enter & x:: do_nothing()
+    Enter & c:: do_nothing()
+    ; Enter & v:: ("inpt | ^v | 粘  贴")
+    Enter & b:: do_nothing()   
+
+^RButton:: set_prior_key("RButton"), screenshot()
+; ^RButton:: set_prior_key("RButton"), interactive_region_screenshot()
++RButton:: set_prior_key("RButton"), interactive_region_ocr(, , 0)
+!RButton:: set_prior_key("RButton"), do_nothing()
+#RButton:: set_prior_key("RButton"), do_nothing()
+^+RButton:: set_prior_key("RButton"), screenshot_translate()
+^!RButton:: set_prior_key("RButton"), do_nothing()
+^#RButton:: set_prior_key("RButton"), do_nothing()
++!RButton:: set_prior_key("RButton"), do_nothing()
++#RButton:: set_prior_key("RButton"), do_nothing()
+!#RButton:: set_prior_key("RButton"), do_nothing()
+
+; ^XButton1:: set_prior_key("XButton1"), do_nothing()
++XButton1:: set_global("prior_key", "XButton1")
+!XButton1:: set_global("prior_key", "XButton1")
+#XButton1:: set_global("prior_key", "XButton1")
+^+XButton1:: set_global("prior_key", "XButton1")
+^!XButton1:: set_global("prior_key", "XButton1")
+^#XButton1:: set_global("prior_key", "XButton1")
++!XButton1:: set_global("prior_key", "XButton1")
++#XButton1:: set_global("prior_key", "XButton1")
+!#XButton1:: set_global("prior_key", "XButton1")
+
+^XButton2:: set_global("prior_key", "XButton2")
++XButton2:: set_global("prior_key", "XButton2")
+!XButton2:: set_global("prior_key", "XButton2")
+#XButton2:: set_global("prior_key", "XButton2")
+^+XButton2:: set_global("prior_key", "XButton2")
+^!XButton2:: set_global("prior_key", "XButton2")
+^#XButton2:: set_global("prior_key", "XButton2")
++!XButton2:: set_global("prior_key", "XButton2")
++#XButton2:: set_global("prior_key", "XButton2")
+!#XButton2:: set_global("prior_key", "XButton2")
+
+
+~^LButton:: set_global("prior_key", "LButton")
+~+LButton:: set_global("prior_key", "LButton")
+~^+LButton:: set_global("prior_key", "LButton")
+
+
+>^2:: do_nothing()
+>^3:: SendInput("^{Enter}")
+>^4:: do_nothing()
+>^q:: MouseAction("slow", "^q", "^+q", "#q")
+>^w:: MouseAction("slow", "func_ctrlw", "func_ctrlshiftw", "func_winw")
+>^e:: MouseAction("slow", "^e", "^+e", "#e")
+>^r:: MouseAction("slow", "^r", "^+r", "#r")
+>^t:: MouseAction("slow", "^t", "^+t", "#t")
+>^a:: MouseAction("slow", "^a", "^+a", "#a") 
+>^s:: MouseAction("slow", "func_ctrls", "save_as", "func_wins")
+>^d:: MouseAction("slow", "^d", "^+d", "#d")
+>^f:: MouseAction("slow", "^f", "^+f", "#f")
+>^g:: MouseAction("slow", "^g", "^+g", "#g")
+>^z:: MouseAction("slow", "^z", "^+z", "#z")
+>^x:: MouseAction("slow", "^x", "^+x", "#x")
+>^c:: MouseAction("slow", "^c", "^+c", "#c")
+>^v:: MouseAction("slow", "^v", "^+v", "#v")
+>^b:: MouseAction("slow", "^b", "^+b", "#b")
+
+; left_window()
+~LButton & 2:: MouseClick(,,,,, "U"), do_nothing()
+~LButton & 3:: MouseClick(,,,,, "U"), MouseAction("slow", "reload_me", "suspend_me", "ExitApp", "func_cancel")
+~LButton & 4:: MouseClick(,,,,, "U"), do_nothing()
+~LButton & q:: MouseClick(,,,,, "U"), do_nothing()
+~LButton & w:: MouseClick(,,,,, "U"), MouseAction("fast", "close_window")
+~LButton & e:: MouseClick(,,,,, "U"), MouseAction("fast", "max_window")
+~LButton & r:: MouseClick(,,,,, "U"), MouseAction("fast", "left_window")
+~LButton & t:: MouseClick(,,,,, "U"), MouseAction("fast", "right_window")
+~LButton & a:: MouseClick(,,,,, "U"), MouseAction("fast", "+#{Left}")
+~LButton & s:: MouseClick(,,,,, "U"), do_nothing()
+~LButton & d:: MouseClick(,,,,, "U"), MouseAction("fast", "min_window", "func_wind")
+~LButton & f:: MouseClick(,,,,, "U"), do_nothing()
+~LButton & g:: MouseClick(,,,,, "U"), do_nothing()
+~LButton & z:: MouseClick(,,,,, "U"), do_nothing()
+~LButton & x:: MouseClick(,,,,, "U"), do_nothing()
+~LButton & c:: MouseClick(,,,,, "U"), do_nothing()
+~LButton & v:: MouseClick(,,,,, "U"), show_clip()
+~LButton & b:: MouseClick(,,,,, "U"), do_nothing()
+
+RButton & 2:: do_nothing()
+RButton & 3:: do_nothing()
+RButton & 4:: do_nothing()
+RButton & q:: do_nothing()
+RButton & w:: MouseAction("fast", "close_window_under_mouse")
+RButton & e:: MouseAction("fast", "^{WheelUp}")
+RButton & r:: MouseAction("fast", "^z")
+RButton & t:: MouseAction("fast", "^y")
+RButton & a:: do_nothing()
+RButton & s:: MouseAction("fast", "+#{Left}")
+RButton & d:: MouseAction("fast", "^{WheelDown}")
+RButton & f:: do_nothing()
+RButton & g:: MouseAction("fast", "paste_format")
+RButton & z:: do_nothing()
+RButton & x:: do_nothing()
+RButton & c:: find_file()
+RButton & v:: do_nothing()
+RButton & b:: do_nothing()
+
+XButton1 & 2:: do_nothing()
+XButton1 & 3:: SendInput("^{Enter}")
+XButton1 & 4:: do_nothing()
+XButton1 & q:: MouseAction("slow", "^q", "^+q", "#q")
+XButton1 & w:: MouseAction("slow", "func_ctrlw", "func_ctrlshiftw", "func_winw")
+XButton1 & e:: MouseAction("fast", "{PgUp}")
+XButton1 & r:: MouseAction("slow", "^r", "^+r", "#r")
+XButton1 & t:: MouseAction("slow", "^t", "^+t", "#t")
+XButton1 & a:: MouseAction("slow", "^a", "^+a", "#a") 
+XButton1 & s:: MouseAction("slow", "func_ctrls", "save_as", "func_wins")
+XButton1 & d:: MouseAction("fast", "{PgDn}")
+XButton1 & f:: MouseAction("slow", "^f", "^+f", "#f")
+XButton1 & g:: MouseAction("slow", "^g", "^+g", "#g")
+XButton1 & z:: MouseAction("slow", "^z", "^+z", "#z")
+XButton1 & x:: MouseAction("slow", "^x", "^+x", "#x")
+XButton1 & c:: MouseAction("slow", "^c", "^+c", "#c")
+XButton1 & v:: quick_paste()
+XButton1 & b:: MouseAction("slow", "^b", "^+b", "#b")
+
+XButton2 & 2:: paste_clip2()
+XButton2 & 3:: paste_clip3()
+XButton2 & 4:: paste_clip4()
+XButton2 & q:: show_clip()
+XButton2 & w:: MouseAction("slow", "^u", "^+u", "#u")     
+XButton2 & e:: MouseAction("slow", "^i", "^+i", "#i")     
+XButton2 & r:: MouseAction("slow", "^o", "^+o", "#o")     
+XButton2 & t:: MouseAction("slow", "^p", "^+p", "#p")     
+XButton2 & a:: MouseAction("slow", "^h", "^+h", "#h")     
+XButton2 & s:: MouseAction("slow", "^j", "^+j", "#j")     
+XButton2 & d:: MouseAction("slow", "^k", "^+k", "#k")     
+XButton2 & f:: MouseAction("slow", "^l", "^+l", "#l")     
+XButton2 & g:: MouseAction("slow", "^;", "^+;", "#;")     
+XButton2 & z:: MouseAction("slow", "^j", "^+j", "#j")     
+XButton2 & x:: MouseAction("slow", "^k", "^+k", "#k")     
+XButton2 & c:: MouseAction("slow", "^l", "^+l", "#l")     
+XButton2 & v:: MouseAction("slow", "^n", "^+n", "#n")     
+XButton2 & b:: MouseAction("slow", "^m", "^+m", "#m")   
+
+
+
+
+~LButton & Esc::   MouseClick(,,,,, "U"), do_nothing()
+~LButton & Ctrl::  MouseClick(,,,,, "U"), MouseAction("fast", "right_window")
+~LButton & Space:: MouseClick(,,,,, "U"), MouseAction("fast", "right_window")
+
+RButton & Esc:: MouseAction("fast", "!+{Tab}")
+RButton & Tab:: MouseAction("fast", "!+{Tab}")
+RButton & Ctrl:: do_nothing()
+RButton & Space:: screenshot()
+
+XButton1 & ESc:: MouseAction("slow", "shutdown_computer", "restart_computer", "lock_screen")
+XButton1 & Tab:: SendInput("{Home}{Tab}") 
+XButton1 & Ctrl:: do_nothing()
+XButton1 & Space:: do_nothing()
+    
+XButton2 & ESc:: do_nothing()
+XButton2 & Tab:: SendInput("{Home}{Tab}") 
+XButton2 & Ctrl:: do_nothing()
+XButton2 & Space:: do_nothing()
+    
+
+    
+    
+    ^F23:: set_global("prior_key", "F23")
+    +F23:: set_global("prior_key", "F23")
+    !F23:: set_global("prior_key", "F23")
+    #F23:: set_global("prior_key", "F23")
+    ^+F23:: set_global("prior_key", "F23")
+    ^!F23:: set_global("prior_key", "F23")
+    ^#F23:: set_global("prior_key", "F23")
+    +!F23:: set_global("prior_key", "F23")
+    +#F23:: set_global("prior_key", "F23")
+    !#F23:: set_global("prior_key", "F23")
+
+    F23 & 1:: do_nothing()
+    F23 & 2:: do_nothing()
+    F23 & 3:: do_nothing()
+    F23 & 4:: do_nothing()
+    F23 & 5:: do_nothing()
+    F23 & q:: do_nothing()
+    F23 & w:: do_nothing()
+    F23 & e:: SendInput("{Up}")
+    F23 & r:: test_paste()
+    F23 & t:: do_nothing()
+    F23 & a:: do_nothing()
+    F23 & s:: SendInput("{Left}")
+    F23 & d:: SendInput("{Down}")
+    F23 & f:: SendInput("{Right}")
+    F23 & z:: do_nothing()
+    F23 & x:: do_nothing()
+    F23 & c:: do_nothing()
+    F23 & v:: do_nothing()
+    F23 & b:: do_nothing()
+    F23 & ESc:: do_nothing()
+    F23 & Tab:: test_paste()
+    F23 & Ctrl:: do_nothing()
+    F23 & Shift:: do_nothing()
+    F23 & Space:: do_nothing()
+    F23 & Enter:: do_nothing()
+   
+    ^F24:: set_global("prior_key", "F24")
+    +F24:: set_global("prior_key", "F24")
+    !F24:: set_global("prior_key", "F24")
+    #F24:: set_global("prior_key", "F24")
+    ^+F24:: set_global("prior_key", "F24")
+    ^!F24:: set_global("prior_key", "F24")
+    ^#F24:: set_global("prior_key", "F24")
+    +!F24:: set_global("prior_key", "F24")
+    +#F24:: set_global("prior_key", "F24")
+    !#F24:: set_global("prior_key", "F24")
+    
+    F24 & 2:: do_nothing()
+    F24 & 3:: do_nothing()
+    F24 & 4:: do_nothing()
+    F24 & q:: do_nothing()
+    F24 & w:: do_nothing()
+    F24 & e:: SendInput("{PgUp}")
+    F24 & r:: do_nothing()
+    F24 & t:: do_nothing()
+    F24 & a:: do_nothing()
+    F24 & s:: SendInput("{Home}")
+    F24 & d:: SendInput("{PgDn}")
+    F24 & f:: SendInput("{End}")
+    F24 & g:: do_nothing()
+    F24 & z:: do_nothing()
+    F24 & x:: do_nothing()
+    F24 & c:: do_nothing()
+    F24 & v:: do_nothing()
+    F24 & b:: do_nothing()
+    F24 & ESc:: do_nothing()
+    F24 & Tab:: SendInput("{Home}{Tab}") 
+    F24 & Ctrl:: do_nothing()
+    F24 & Shift:: do_nothing()
+    F24 & Space:: do_nothing()
+    F24 & Enter:: SendInput("+{Enter}")
+
+
+
+    ; ~^MButto:: set_global("prior_key", "MButton")
+    ; ~+MButto:: set_global("prior_key", "MButton")
+    ; ~^+MButto:: set_global("prior_key", "MButton")
+
+#HotIf
+; #endregion 
+        "secret_key", "PLH5jHjPWmi6J2T8i3Zsd6p7Djqjkeqa",
+        "token_url", "https://aip.baidubce.com/oauth/2.0/token",
+        "api_url", "https://aip.baidubce.com/rest/2.0/ocr/v1/accurate_basic"
+    ),
+    "general_ocr", Map(
+        "api_key", "cP0vgrx0Cu86odtEpmn9rz4Y",
+        "secret_key", "PLH5jHjPWmi6J2T8i3Zsd6p7Djqjkeqa",
+        "token_url", "https://aip.baidubce.com/oauth/2.0/token",
+        "api_url", "https://aip.baidubce.com/rest/2.0/ocr/v1/general_basic"
+    ),
+    "remove_handwriting_ocr", Map(
+        "api_key", "cP0vgrx0Cu86odtEpmn9rz4Y",
+        "secret_key", "PLH5jHjPWmi6J2T8i3Zsd6p7Djqjkeqa",
+        "token_url", "https://aip.baidubce.com/oauth/2.0/token",
+        "api_url", "https://aip.baidubce.com/rest/2.0/ocr/v1/remove_handwriting"
+    ),
+    "translation", Map(
+        "api_key", "zXa3W3adFJuOWbx4M7quObOs",
+        "secret_key", "lD2XV8xDVeTJKIyvxjoy4ZrhSHgQw7iA",
+        "token_url", "https://aip.baidubce.com/oauth/2.0/token",
+        "api_url", "https://aip.baidubce.com/rpc/2.0/mt/texttrans/v1"
+    ),
+    "text_translation", Map(
+        "api_key", "zXa3W3adFJuOWbx4M7quObOs",
+        "secret_key", "lD2XV8xDVeTJKIyvxjoy4ZrhSHgQw7iA",
+        "token_url", "https://aip.baidubce.com/oauth/2.0/token",
+        "api_url", "https://aip.baidubce.com/rpc/2.0/mt/texttrans/v1"
+    ),
+    "picture_translation", Map(
+        "api_key", "zXa3W3adFJuOWbx4M7quObOs",
+        "secret_key", "lD2XV8xDVeTJKIyvxjoy4ZrhSHgQw7iA",
+        "token_url", "https://aip.baidubce.com/oauth/2.0/token",
+        "api_url", "https://aip.baidubce.com/file/2.0/mt/pictrans/v1"
+    )
+)
+
+
+global ch_fonts := [
+    "MiSans light", 
+    "阿里巴巴普惠体 3.0 55 Regular", 
+    "微软雅黑", 
+    "思源宋体 CN", 
+    "方正清刻本悦宋简体", 
+    "喜鹊招牌体", 
+    "字酷堂清楷 简", 
+    "字体圈欣意冠黑体"]
+                    
+global en_fonts := [
+    "Fira Code light",
+    "Gilroy Regular",
+    "微软雅黑",
+    "思源宋体 CN",
+    "方正清刻本悦宋简体",
+    "喜鹊招牌体",
+    "字酷堂清楷 简",
+    "字体圈欣意冠黑体"]
+
+
+; #Include <load_settings>
+
+#Include <global_vars>
+
+
+#Include <function>
+#Include <lib_office_function>
+#Include <Notify>
+
+#Include <baidu_api>
+
+#Include <class_http>
+#Include <DPI>
+#Include <Gdip_All>
+#Include <split_ppt>
+#Include <Class_SQLiteDB> 
+
+; MsgBox(A_Now, , "T2")
+
+; 显示启动信息
+try { 
+    center_info("Qwert is running as " . (A_IsAdmin ? "admin" : "normal"))  
+
+    } catch as err {
+        MsgBox(Format("Error: {1}`nFile: {2}`nLine:  {3}", err.message, err.file, err.Line))
+    }    
+
+
+
+; ---------- 监听剪贴板变化 ----------
+OnClipboardChange(clip_changed)
+
+; 当脚本退出时，自动执行 SaveHistory 函数
+OnExit(save_clipboard_history)
+
+load_clipboard_history() 
+
+load_clipboard_history() {  
+
+    try {
+
+        clipboard_history_map := Map()
+        clipboard_history_map := json.load(FileRead("settings\clipboard_history.json"))
+
+        if clipboard_history_map.has("1")
+            clipboard_history.Push(clipboard_history_map["1"])
+        else
+            clipboard_history.Push("#1_clip is empty")
+
+        if clipboard_history_map.has("2")
+            clipboard_history.Push(clipboard_history_map["2"])
+        else
+            clipboard_history.Push("#2_clip is empty")
+
+        if clipboard_history_map.has("3")
+            clipboard_history.Push(clipboard_history_map["3"])
+        else
+            clipboard_history.Push("#3_clip is empty")
+
+        if clipboard_history_map.has("4")
+            clipboard_history.Push(clipboard_history_map["4"])
+        else
+            clipboard_history.Push("#4_clip is empty")
+
+        if clipboard_history_map.has("5")
+            clipboard_history.Push(clipboard_history_map["5"])
+        else
+            clipboard_history.Push("#5_clip is empty")
+
+        if clipboard_history_map.has("6")
+            clipboard_history.Push(clipboard_history_map["6"])
+        else
+            clipboard_history.Push("#6_clip is empty")
+
+        if clipboard_history_map.has("7")
+            clipboard_history.Push(clipboard_history_map["7"])
+        else
+            clipboard_history.Push("#7_clip is empty")
+
+        if clipboard_history_map.has("8")
+            clipboard_history.Push(clipboard_history_map["8"])
+        else
+            clipboard_history.Push("#8_clip is empty")
+
+        if clipboard_history_map.has("9")
+            clipboard_history.Push(clipboard_history_map["9"])
+        else
+            clipboard_history.Push("#9_clip is empty")
+
+        if clipboard_history_map.has("10")
+            clipboard_history.Push(clipboard_history_map["10"])
+        else
+            clipboard_history.Push("#10_clip is empty")
+    }
+
+
+}
+
+clip_changed(data_type) {
+    try {
+        global clipboard_history, max_history
+
+        ; 只处理文本类型
+        if (data_type != 1)
+            return
+
+        content := A_Clipboard
+        
+        ; 跳过空内容
+        if (content = "")
+            return
+
+        ; 插入到开头（最新的在前）
+        clipboard_history.InsertAt(1, content)
+
+        ; 超出上限则删除最旧的
+        while (clipboard_history.Length > max_history)
+            clipboard_history.Pop()
+    } catch
+        throw
+}
+
+ 
+
+; --- 保存函数 ---
+save_clipboard_history(*) {
+    global clipboard_history  
+    try {
+        clip_map := Map()
+
+        loop 10 {
+            if clipboard_history.has(a_index)
+                clip_map[a_index] := clipboard_history[a_index]
+           else
+                clip_map[a_index] := "nothing"
+            
+        }
+
+        ; 直接覆盖保存
+        json_text := json.dumps(clip_map, 2)
+        json_file := FileOpen("settings\clipboard_history.json", "w") 
+        json_file.Write(json_text)
+        json_file.Close() 
+
+    } catch as err {
+        MsgBox(Format("Error: {1}`nFile: {2}`nLine:  {3}", err.message, err.file, err.Line))
+    }    
+}
+
+
+
+
+
+
+; #endregion
+   
+; #region suspend_exempt
+#SuspendExempt
+
+    ~LButton & 3:: {
+        MouseClick(,,,,, "U")
+        MouseAction("slow", "reload_me", "suspend_me", "ExitApp", "func_cancel")
+    }
+    
+    suspend_me() {
+        Suspend
+
+        if A_IsSuspended
+            show_info_red("QWERT is suspending ...")
+        else 
+            center_info("QWERT is recovering ...")
+    }
+
+    reload_me() { 
+        SendInput("{Escape}")
+
+        If WinActive("ahk_exe Code.exe") {
+            SendInput("^s")
+            Sleep(50)
+        }  
+        Reload
+    }
+
+    func_cancel() {
+        a := 0
+    }
+
+#SuspendExempt False
+; #endregion 
+
+
+
+; #region visual_studio_code
+#HotIf WinActive("ahk_exe Code.exe")
+    add_brace() {
+        try {
+            SendInput(" {{}{Down}{End}`n{`}}")
+        } catch as err {
+            MsgBox("增加大括号失败: " . err.Message)
+        }
+    }
+    Tab & LButton:: SendInput("!+{LButton}")
+    
+    XButton1 & 2:: SendInput("^k^]")
+    XButton1 & 3:: SendInput("^k^0") 
+    F24 & f:: SendInput("^c^r{Right}{Enter}^v{Enter}")  
+
+    ; XButton1:: fast_cat("+{MButton}", "+{LButton}")
+
+    F24:: fast_cat("+{MButton}", "+{LButton}")
+
+
+   
+
+    :*:bbb:: {
+        try {
+            SendInput(" {{}{Delete}{Down}{End}`n+{Tab}{`}}")
+        } catch as err {
+            MsgBox("增加大括号失败: " . err.Message)
+        }
+    }
+
+    12345
+
+    12341567890
+
+    134
+        1234567890                              
+    11111
+    ; :*:bbb:: {
+    ;     try {
+    ;         SendInput(" {{}{Delete}{Down}{End}`n+{Tab}{`}}")
+    ;     } catch as err {
+    ;         MsgBox("增加大括号失败: " . err.Message)
+    ;     }
+    ; }
+
+    ddd ; :*:bbb:: { ; :*:bbb:: {
+
+         ; :*:bbb:: {
+
+d增加大括号失败
+
+d增加大括号失败
+
+d增加大括号失败d
+
+
+diwfgdifjgowdofsfiffffeigidskfghsifjwoaoaksdfwoieksghsdifj
+ksjfiklfjoikdsjfighaisdfjlsff
+
+sssss
+ssss
+ssss
+ ; :*:bbb:: {
+
+ ; :*:bbb:: {
+
+s s
+    ; :*:bbb:: {
+    ;     try {
+    ;         SendInput(" {{}{Delete}{Down}{End}`n+{Tab}{`}}")
+    ;     } catch as err {
+    ;         MsgBox("增加大括号失败: " . err.Message)
+    ;     }
+    ; }
+
+    :*:eee::{Home 2}+{End}^v
+    :*:sss::+{End}^c
+    :*:ddd::+{End}^v
+    :*:ssg:: {
+        SendText("`nMsgBox(A_Now, , `"T2`")") 
+            SendInput("{Left 9}+{Left 5}")
+    }
+
+MsgBox(A_Now, , "T2")
+
+MsgBox(A_Now, , "T2")
+ssg
+SSG
+SSGssg
+ssgssg
+MsgBox(A_Now, , "T2")
+
+MsgBox(A_Now, , "T2")
+ssg
+    :*:eee::{Home 2}+{End}^v
+
+        text := "
+        (
+        function() {
+            try {              
+            } catch as err {
+                MsgBox("失败: " . err.Message)    
+            }
+        }
+        )"    
+        send_by_clipboard(text)
+        SendInput("{Left 1}{Up 5}+{Right 8}")
+
+    }
+
+    :*:shh::center_info(      ; 快速输入show_info函数
+    ; :*:ssf::`nif (expression`s==`sTrue)`s`{{}`n`{}} {Left 22}+{Left 10}  ; 快速输入show_info函数带引号
+    Tab & j:: SendInput("^{Right 2}^+{Left}")
+
+    ; F23:: {
+    ;     SendInput("!+{LButton}")
+    ; } 
+
+    ; F23 & r:: {
+    ;     SendInput("^!+l")
+    ; }  
+
+    ; F23 & g:: {
+    ;     SendInput("^!+u")
+    ; }   
+
+ 
+; smart_delete() {  
+;     try {
+;         if WinActive("ahk_exe Code.exe") {
+;             ("inpt | ^+k | 删除整行", "inpt | ^+!2 | 删除光标右侧内容", "inpt | ^+!1 | 删除光标左侧内容")    
+;         } else {
+;             ("inpt | {Home}+{End}{Delete} | 删除整行", "inpt | +{End}{Delete} | 删除光标右侧内容", "inpt | +{Home}{Delete} | 删除光标左侧内容")    
+;         }
+;     } catch as err
+;         Msgbox(err.Message)       
+; } 
+ 
+#HotIf
+; #endregion
+
+; #region super_idol
+#HotIf super_idol
+~q:: false_idol()
+~w:: false_idol()
+~e:: false_idol()
+~r:: false_idol()
+~t:: false_idol()
+~a:: false_idol()
+~s:: false_idol()
+~d:: false_idol()
+
+~g:: false_idol()
+~z:: false_idol()
+~x:: false_idol()
+~c:: false_idol()
+
+~b:: false_idol()
+~y:: false_idol()
+~u:: false_idol()
+~i:: false_idol()
+~o:: false_idol()
+~p:: false_idol()
+~h:: false_idol()
+~j:: false_idol()
+~k:: false_idol()
+~l:: false_idol()
+~m:: false_idol()
+~n:: false_idol()
+
+f::fast_cat("copy_format", "func_ctrlx")
+v::fast_cat("ct_v")
+
+
+
+
+#HotIf 
+; #endregion
+
+; #region Shift, CapsLock, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0
+#HotIf 1
+    :*:eee::{Home 2}+{End}^v
+    :*?:sss::+{End}^c
+    :*?:ddd::+{End}^v
+    :*:ggg::{
+        SendInput("^v")
+    }
+    :*?:wjtwjt::wjtwjt@gmail.com
+    :*?:huahua::hu@903L2
+    :*?:ccc::13661896375@163.com
+    :*?:ttt::王俊涛
+
+      
+   
+    
+    
+    :*?:[[::]
+    :*?:dss::王俊涛
+    :*?:ooo::[
+    :*?:ssd:: {
+        Send FormatTime(, "yyMMdd")  ;  看起来会像 9/1/2005 3:53 PM 这样
+    }
+
+    :*:btw::{
+        MsgBox ThisHotkey  ; 报告 :X:btw
+    }
+
+
+   
+
+    ; ~CapsLock:: set_global("super_idol", false, "fn_mode", false), center_info(GetKeyState("CapsLock", "T") ? "大  写" : "小  写") 
+    ; ^7:: Send(Chr(0x4E28))
+
+    ; F23:: {        
+    ;     if WinActive("ahk_group video_group") {
+    ;         SendInput("{Left}")
+    ;     } else if (WinActive("ahk_class CabinetWClass")) {
+    ;         SendInput("!{Up}")
+    ;     }
+    ; }   
+    Tab & LButton:: SendInput("+{LButton}")
+  
+    
+    ~LButton:: set_global("super_idol", true)
+    RButton:: set_global("super_idol", false), SendInput("{RButton}")
+    XButton1:: SendInput("{XButton1}")
+    XButton2:: SendInput("{XButton2}")               
+
+    CapsLock:: set_global("super_idol", false), english_input()
+    Ctrl:: set_global("super_idol", false), english_input()
+    Shift:: set_global("super_idol", false), toggle_input_method()
+    Space:: SendInput("{Space}")
+    Esc:: SendInput("{Esc}")
+    Enter:: smart_enter()    
+
+
+    Tab:: SendInput("{Tab}")
+
+
+    ; CapsLock & LButton:: ^LButton
+
+
+
+
+
+
+
+2:: send_2_or_delete()
+3:: send_enter_or_space()
+4:: send_3_or_backspace()
+7:: SendInput("[")
+8:: send_pgdn_or_IME()
+9:: send_pgup_or_esc()
+
+
+    >^:: SendInput(">")
+
+  
+    >^7:: SendInput("{^}")
+    >^8:: SendInput("8")
+    >^9:: Send(Chr(0x4E28))
+    >^y:: SendInput("``")
+    >^u:: SendInput("?")
+    >^i:: SendInput("'")
+    >^o:: SendInput("[") 
+    >^p:: SendInput("]") 
+    >^h:: SendInput("\")
+    >^j:: SendInput(", ")
+    >^k:: SendInput(".")
+    >^l:: step_clip()    
+    >^;:: SendInput(".")
+    >^n:: SendInput("<")
+    >^m:: SendInput(">")
+
+    ^Tab:: SendInput("^{Tab}") 
+    +Tab:: SendInput("+{Tab}") 
+    !Tab:: SendInput("!{Tab}")
+    #Tab:: SendInput("#{Tab}")
+    ^+Tab:: SendInput("^+{Tab}")
+    ^!Tab:: SendInput("^!{Tab}")
+    ^#Tab:: SendInput("^#{Tab}") 
+    +!Tab:: SendInput("+!{Tab}") 
+    +#Tab:: SendInput("+#{Tab}") 
+    !#Tab:: SendInput("!#{Tab}") 
+    Tab & 7:: do_nothing()
+    Tab & 8:: do_nothing()
+    Tab & 9:: do_nothing()
+    Tab & y:: do_nothing()
+    Tab & u:: do_nothing()
+    Tab & i:: do_nothing()
+    Tab & o:: do_nothing()
+    Tab & p:: do_nothing()
+    Tab & h:: do_nothing()
+    Tab & j:: do_nothing()
+    Tab & k:: do_nothing()
+    Tab & l:: do_nothing()
+    Tab & n:: do_nothing()
+    Tab & m:: do_nothing()
+
+    ^Space:: SendInput("^{Space}") 
+    +Space:: SendInput("+{Space}") 
+    !Space:: SendInput("!{Space}")
+    #Space:: SendInput("#{Space}")
+    ^+Space:: SendInput("^+{Space}")
+    ^!Space:: SendInput("^!{Space}")
+    ^#Space:: SendInput("^#{Space}") 
+    +!Space:: SendInput("+!{Space}") 
+    +#Space:: SendInput("+#{Space}") 
+    !#Space:: SendInput("!#{Space}") 
+
+    Space & 2:: SendInput("@")
+    Space & 3:: SendInput("{#}")
+    Space & 4:: SendInput("$")
+    Space & q:: SendText("q")
+    Space & w:: SendInput("6")       
+    Space & e:: SendInput("7")       
+    Space & r:: SendInput("8")      
+    Space & t:: SendInput("9") 
+    Space & a:: SendInput("1")
+    Space & s:: SendInput("2")
+    Space & d:: SendInput("3")
+    Space & f:: SendInput("4")
+    Space & g:: SendInput("5")
+    Space & z:: SendInput("{+}") 
+    Space & x:: SendInput("-")  
+    Space & c:: SendText("_")
+    Space & v:: SendInput("0")   
+    Space & b:: SendText(".")
+
+    Space & 7:: SendInput("&")
+    Space & 8:: SendInput("*")
+    Space & 9:: SendInput("|")
+    Space & y:: SendInput("~")
+    Space & u:: SendInput("{!}")
+    Space & i:: SendInput("`"")
+    Space & o:: SendInput("{{}")
+    Space & p:: SendInput("{`}}")
+    Space & h:: SendInput("/")  
+    Space & j:: SendInput("=") 
+    Space & k:: SendInput("(")  
+    Space & l:: SendInput(")") 
+    Space & `;:: SendInput("`;")
+    Space & n:: SendInput(":")
+    Space & m:: SendInput("%")
+    Space & Esc:: SendInput("+{Esc}")
+    Space & Tab:: SendInput("+{Tab}") 
+    Space & Ctrl:: SendInput("+{Ctrl}") 
+    Space & Shift:: do_nothing()
+    Space & Enter:: SendInput("+{Enter}")   
+    Space & LButton:: SendInput("+{LButton}")
+    Space & RButton:: SendInput("+{RButton}")
+    Space & XButton1:: do_nothing()
+    Space & XButton2:: do_nothing()
+    Space & F23:: do_nothing()
+    Space & F24:: do_nothing()  
+    Space & MButton:: SendInput("+{MButton}") 
+
+    ^Enter:: SendInput("^{Enter}") 
+    +Enter:: SendInput("+{Enter}") 
+    !Enter:: SendInput("!{Enter}")
+    #Enter:: SendInput("#{Enter}")
+    ^+Enter:: SendInput("^+{Enter}")
+    ^!Enter:: SendInput("^!{Enter}")
+    ^#Enter:: SendInput("^#{Enter}") 
+    +!Enter:: SendInput("+!{Enter}") 
+    +#Enter:: SendInput("+#{Enter}") 
+    !#Enter:: SendInput("!#{Enter}") 
+
+    Enter & 1:: do_nothing()
+    Enter & 2:: SendInput("!{Enter}")
+    Enter & 3:: SendInput("!{Enter}")
+    Enter & 4:: do_nothing()
+    Enter & q:: do_nothing()
+    Enter & w:: do_nothing() 
+    Enter & e:: SendInput("{Up}")
+    Enter & r:: SendInput("^z")
+    Enter & t:: SendInput("^y")
+    Enter & a:: SendInput("{Home}") 
+    Enter & s:: SendInput("{Left}")
+    Enter & d:: SendInput("{Down}")
+    Enter & f:: SendInput("{Right}")
+    Enter & g:: do_nothing()
+    Enter & z:: do_nothing()
+    Enter & x:: do_nothing()
+    Enter & c:: do_nothing()
+    ; Enter & v:: ("inpt | ^v | 粘  贴")
+    Enter & b:: do_nothing()   
+
+^RButton:: set_prior_key("RButton"), screenshot()
+; ^RButton:: set_prior_key("RButton"), interactive_region_screenshot()
++RButton:: set_prior_key("RButton"), interactive_region_ocr(, , 0)
+!RButton:: set_prior_key("RButton"), do_nothing()
+#RButton:: set_prior_key("RButton"), do_nothing()
+^+RButton:: set_prior_key("RButton"), screenshot_translate()
+^!RButton:: set_prior_key("RButton"), do_nothing()
+^#RButton:: set_prior_key("RButton"), do_nothing()
++!RButton:: set_prior_key("RButton"), do_nothing()
++#RButton:: set_prior_key("RButton"), do_nothing()
+!#RButton:: set_prior_key("RButton"), do_nothing()
+
+; ^XButton1:: set_prior_key("XButton1"), do_nothing()
++XButton1:: set_global("prior_key", "XButton1")
+!XButton1:: set_global("prior_key", "XButton1")
+#XButton1:: set_global("prior_key", "XButton1")
+^+XButton1:: set_global("prior_key", "XButton1")
+^!XButton1:: set_global("prior_key", "XButton1")
+^#XButton1:: set_global("prior_key", "XButton1")
++!XButton1:: set_global("prior_key", "XButton1")
++#XButton1:: set_global("prior_key", "XButton1")
+!#XButton1:: set_global("prior_key", "XButton1")
+
+^XButton2:: set_global("prior_key", "XButton2")
++XButton2:: set_global("prior_key", "XButton2")
+!XButton2:: set_global("prior_key", "XButton2")
+#XButton2:: set_global("prior_key", "XButton2")
+^+XButton2:: set_global("prior_key", "XButton2")
+^!XButton2:: set_global("prior_key", "XButton2")
+^#XButton2:: set_global("prior_key", "XButton2")
++!XButton2:: set_global("prior_key", "XButton2")
++#XButton2:: set_global("prior_key", "XButton2")
+!#XButton2:: set_global("prior_key", "XButton2")
+
+
+~^LButton:: set_global("prior_key", "LButton")
+~+LButton:: set_global("prior_key", "LButton")
+~^+LButton:: set_global("prior_key", "LButton")
+
+
+>^2:: do_nothing()
+>^3:: SendInput("^{Enter}")
+>^4:: do_nothing()
+>^q:: MouseAction("slow", "^q", "^+q", "#q")
+>^w:: MouseAction("slow", "func_ctrlw", "func_ctrlshiftw", "func_winw")
+>^e:: MouseAction("slow", "^e", "^+e", "#e")
+>^r:: MouseAction("slow", "^r", "^+r", "#r")
+>^t:: MouseAction("slow", "^t", "^+t", "#t")
+>^a:: MouseAction("slow", "^a", "^+a", "#a") 
+>^s:: MouseAction("slow", "func_ctrls", "save_as", "func_wins")
+>^d:: MouseAction("slow", "^d", "^+d", "#d")
+>^f:: MouseAction("slow", "^f", "^+f", "#f")
+>^g:: MouseAction("slow", "^g", "^+g", "#g")
+>^z:: MouseAction("slow", "^z", "^+z", "#z")
+>^x:: MouseAction("slow", "^x", "^+x", "#x")
+>^c:: MouseAction("slow", "^c", "^+c", "#c")
+>^v:: MouseAction("slow", "^v", "^+v", "#v")
+>^b:: MouseAction("slow", "^b", "^+b", "#b")
+
+; left_window()
+~LButton & 2:: MouseClick(,,,,, "U"), do_nothing()
+~LButton & 3:: MouseClick(,,,,, "U"), MouseAction("slow", "reload_me", "suspend_me", "ExitApp", "func_cancel")
+~LButton & 4:: MouseClick(,,,,, "U"), do_nothing()
+~LButton & q:: MouseClick(,,,,, "U"), do_nothing()
+~LButton & w:: MouseClick(,,,,, "U"), MouseAction("fast", "close_window")
+~LButton & e:: MouseClick(,,,,, "U"), MouseAction("fast", "max_window")
+~LButton & r:: MouseClick(,,,,, "U"), MouseAction("fast", "left_window")
+~LButton & t:: MouseClick(,,,,, "U"), MouseAction("fast", "right_window")
+~LButton & a:: MouseClick(,,,,, "U"), MouseAction("fast", "+#{Left}")
+~LButton & s:: MouseClick(,,,,, "U"), do_nothing()
+~LButton & d:: MouseClick(,,,,, "U"), MouseAction("fast", "min_window", "func_wind")
+~LButton & f:: MouseClick(,,,,, "U"), do_nothing()
+~LButton & g:: MouseClick(,,,,, "U"), do_nothing()
+~LButton & z:: MouseClick(,,,,, "U"), do_nothing()
+~LButton & x:: MouseClick(,,,,, "U"), do_nothing()
+~LButton & c:: MouseClick(,,,,, "U"), do_nothing()
+~LButton & v:: MouseClick(,,,,, "U"), show_clip()
+~LButton & b:: MouseClick(,,,,, "U"), do_nothing()
+
+RButton & 2:: do_nothing()
+RButton & 3:: do_nothing()
+RButton & 4:: do_nothing()
+RButton & q:: do_nothing()
+RButton & w:: MouseAction("fast", "close_window_under_mouse")
+RButton & e:: MouseAction("fast", "^{WheelUp}")
+RButton & r:: MouseAction("fast", "^z")
+RButton & t:: MouseAction("fast", "^y")
+RButton & a:: do_nothing()
+RButton & s:: MouseAction("fast", "+#{Left}")
+RButton & d:: MouseAction("fast", "^{WheelDown}")
+RButton & f:: do_nothing()
+RButton & g:: MouseAction("fast", "paste_format")
+RButton & z:: do_nothing()
+RButton & x:: do_nothing()
+RButton & c:: find_file()
+RButton & v:: do_nothing()
+RButton & b:: do_nothing()
+
+XButton1 & 2:: do_nothing()
+XButton1 & 3:: SendInput("^{Enter}")
+XButton1 & 4:: do_nothing()
+XButton1 & q:: MouseAction("slow", "^q", "^+q", "#q")
+XButton1 & w:: MouseAction("slow", "func_ctrlw", "func_ctrlshiftw", "func_winw")
+XButton1 & e:: MouseAction("fast", "{PgUp}")
+XButton1 & r:: MouseAction("slow", "^r", "^+r", "#r")
+XButton1 & t:: MouseAction("slow", "^t", "^+t", "#t")
+XButton1 & a:: MouseAction("slow", "^a", "^+a", "#a") 
+XButton1 & s:: MouseAction("slow", "func_ctrls", "save_as", "func_wins")
+XButton1 & d:: MouseAction("fast", "{PgDn}")
+XButton1 & f:: MouseAction("slow", "^f", "^+f", "#f")
+XButton1 & g:: MouseAction("slow", "^g", "^+g", "#g")
+XButton1 & z:: MouseAction("slow", "^z", "^+z", "#z")
+XButton1 & x:: MouseAction("slow", "^x", "^+x", "#x")
+XButton1 & c:: MouseAction("slow", "^c", "^+c", "#c")
+XButton1 & v:: quick_paste()
+XButton1 & b:: MouseAction("slow", "^b", "^+b", "#b")
+
+XButton2 & 2:: paste_clip2()
+XButton2 & 3:: paste_clip3()
+XButton2 & 4:: paste_clip4()
+XButton2 & q:: show_clip()
+XButton2 & w:: MouseAction("slow", "^u", "^+u", "#u")     
+XButton2 & e:: MouseAction("slow", "^i", "^+i", "#i")     
+XButton2 & r:: MouseAction("slow", "^o", "^+o", "#o")     
+XButton2 & t:: MouseAction("slow", "^p", "^+p", "#p")     
+XButton2 & a:: MouseAction("slow", "^h", "^+h", "#h")     
+XButton2 & s:: MouseAction("slow", "^j", "^+j", "#j")     
+XButton2 & d:: MouseAction("slow", "^k", "^+k", "#k")     
+XButton2 & f:: MouseAction("slow", "^l", "^+l", "#l")     
+XButton2 & g:: MouseAction("slow", "^;", "^+;", "#;")     
+XButton2 & z:: MouseAction("slow", "^j", "^+j", "#j")     
+XButton2 & x:: MouseAction("slow", "^k", "^+k", "#k")     
+XButton2 & c:: MouseAction("slow", "^l", "^+l", "#l")     
+XButton2 & v:: MouseAction("slow", "^n", "^+n", "#n")     
+XButton2 & b:: MouseAction("slow", "^m", "^+m", "#m")   
+
+
+
+
+~LButton & Esc::   MouseClick(,,,,, "U"), do_nothing()
+~LButton & Ctrl::  MouseClick(,,,,, "U"), MouseAction("fast", "right_window")
+~LButton & Space:: MouseClick(,,,,, "U"), MouseAction("fast", "right_window")
+
+RButton & Esc:: MouseAction("fast", "!+{Tab}")
+RButton & Tab:: MouseAction("fast", "!+{Tab}")
+RButton & Ctrl:: do_nothing()
+RButton & Space:: screenshot()
+
+XButton1 & ESc:: MouseAction("slow", "shutdown_computer", "restart_computer", "lock_screen")
+XButton1 & Tab:: SendInput("{Home}{Tab}") 
+XButton1 & Ctrl:: do_nothing()
+XButton1 & Space:: do_nothing()
+    
+XButton2 & ESc:: do_nothing()
+XButton2 & Tab:: SendInput("{Home}{Tab}") 
+XButton2 & Ctrl:: do_nothing()
+XButton2 & Space:: do_nothing()
+    
+
+    
+    
+    ^F23:: set_global("prior_key", "F23")
+    +F23:: set_global("prior_key", "F23")
+    !F23:: set_global("prior_key", "F23")
+    #F23:: set_global("prior_key", "F23")
+    ^+F23:: set_global("prior_key", "F23")
+    ^!F23:: set_global("prior_key", "F23")
+    ^#F23:: set_global("prior_key", "F23")
+    +!F23:: set_global("prior_key", "F23")
+    +#F23:: set_global("prior_key", "F23")
+    !#F23:: set_global("prior_key", "F23")
+
+    F23 & 1:: do_nothing()
+    F23 & 2:: do_nothing()
+    F23 & 3:: do_nothing()
+    F23 & 4:: do_nothing()
+    F23 & 5:: do_nothing()
+    F23 & q:: do_nothing()
+    F23 & w:: do_nothing()
+    F23 & e:: SendInput("{Up}")
+    F23 & r:: test_paste()
+    F23 & t:: do_nothing()
+    F23 & a:: do_nothing()
+    F23 & s:: SendInput("{Left}")
+    F23 & d:: SendInput("{Down}")
+    F23 & f:: SendInput("{Right}")
+    F23 & z:: do_nothing()
+    F23 & x:: do_nothing()
+    F23 & c:: do_nothing()
+    F23 & v:: do_nothing()
+    F23 & b:: do_nothing()
+    F23 & ESc:: do_nothing()
+    F23 & Tab:: test_paste()
+    F23 & Ctrl:: do_nothing()
+    F23 & Shift:: do_nothing()
+    F23 & Space:: do_nothing()
+    F23 & Enter:: do_nothing()
+   
+    ^F24:: set_global("prior_key", "F24")
+    +F24:: set_global("prior_key", "F24")
+    !F24:: set_global("prior_key", "F24")
+    #F24:: set_global("prior_key", "F24")
+    ^+F24:: set_global("prior_key", "F24")
+    ^!F24:: set_global("prior_key", "F24")
+    ^#F24:: set_global("prior_key", "F24")
+    +!F24:: set_global("prior_key", "F24")
+    +#F24:: set_global("prior_key", "F24")
+    !#F24:: set_global("prior_key", "F24")
+    
+    F24 & 2:: do_nothing()
+    F24 & 3:: do_nothing()
+    F24 & 4:: do_nothing()
+    F24 & q:: do_nothing()
+    F24 & w:: do_nothing()
+    F24 & e:: SendInput("{PgUp}")
+    F24 & r:: do_nothing()
+    F24 & t:: do_nothing()
+    F24 & a:: do_nothing()
+    F24 & s:: SendInput("{Home}")
+    F24 & d:: SendInput("{PgDn}")
+    F24 & f:: SendInput("{End}")
+    F24 & g:: do_nothing()
+    F24 & z:: do_nothing()
+    F24 & x:: do_nothing()
+    F24 & c:: do_nothing()
+    F24 & v:: do_nothing()
+    F24 & b:: do_nothing()
+    F24 & ESc:: do_nothing()
+    F24 & Tab:: SendInput("{Home}{Tab}") 
+    F24 & Ctrl:: do_nothing()
+    F24 & Shift:: do_nothing()
+    F24 & Space:: do_nothing()
+    F24 & Enter:: SendInput("+{Enter}")
+
+
+
+    ; ~^MButto:: set_global("prior_key", "MButton")
+    ; ~+MButto:: set_global("prior_key", "MButton")
+    ; ~^+MButto:: set_global("prior_key", "MButton")
+
+#HotIf
+; #endregion 
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      "duty_table_local": "D:\\04_work\\routine\\排班表\\卫星地球站排班表 - 2025.xls",改为
+      "duty_table_local": {
+        "payload": "D:\\04_work\\routine\\排班表\\卫星地球站排班表 - 2025.xls",
+        "label": "duty_table_local"
+      }, 
+
+
+      "duty_table_local": "D:\\04_work\\routine\\排班表\\卫星地球站排班表 - 2025.xls",
+      "pbb_server": "\\\\172.20.1.254\\地球站\\公用\\工作日程表\\卫星地球站排班表.xls",
+  
+      "weekly_report": "D:\\04_work\\routine\\报告\\【周报】2025×王俊涛.xlsx",
+  
+      "assets_management": "D:\\04_work\\assets\\2024固定资产管理.xlsm",
+      "barcode_file": "D:\\04_work\\assets\\01_条码打印\\固定资产条码.xls",
+  
+      "training_template": "D:\\04_work\\routine\\培训\\03_培训资料\\培训模板\\地球站培训记录表模板.xlsx",
+  
+      "operation_manual": "D:\\04_work\\routine\\维护\\上海广播电视台卫星地球站操作应急规范-播出系统V24.10.docx",
+      "maintenance_log": "\\\\172.20.1.254\\地球站\\技术体系\\系统维护工作\\系统维护和变更记录\\维护登录\\2026年维护登记.xlsx",  
+      "shortcut_table": "D:\\system\\qwert\\settings\\shoutcut_table.xlsx",  
+
+      "desktop_notes_1": "Snipaste paste --pos 1920 0 --files D:\\system\\desktop_notes\\vscode_shortcut.png",  
+      "desktop_notes_2": "Snipaste paste --pos 1920 0 --files D:\\system\\desktop_notes\\snipaste_help_1.png",   
+      "desktop_notes_3": "Snipaste paste --pos 1920 0 --files D:\\system\\desktop_notes\\snipaste_help_2.png"
+
+  
+
+      "pbb_path_server": "\\\\172.20.1.254\\地球站\\公用\\工作日程表",
+      "wh_path_server": "\\\\172.20.1.254\\地球站\\技术体系\\系统维护工作\\系统维护和变更记录\\维护登录\\",
+      "gr_path_server": "\\\\172.20.1.254\\地球站个人资料\\工程师\\王俊涛"
+
+  
+
+      "layout_json": "\\settings\\layout_frames.json",
+      "preset_layouts_json": "\\settings\\preset_layouts.json",
+      "d_drive": "D:\\",
+      "download": "D:\\02_cache\\download",
+      "baidu_download": "D:\\02_cache\\BaiduNetdiskDownload",
+  
+      "routine": "D:\\04_work\\routine", 
+      "rcgz": "D:\\日常工作",
+      "work_project": "D:\\04_work\\project",
+  
+      "ahk_doc": "D:\\03_code\\autohotkey\\project\\qwert\\doc",
+      "config_folder": "D:\\03_code\\autohotkey\\project\\qwert",
+      "vba_code": "D:\\03_编程开发\\01_AutoHotkey\\01_我的代码\\qwert\\vba",
+
+      "project": "D:\\工作\\项目",
+      "system": "D:\\system",
+      "inbox": "D:\\system\\inbox",
+  
+      "screenshot": "D:\\02_cache\\screenshot",
+      "image": "D:\\03_code\\autohotkey\\project\\qwert\\img",
+      "system_data": "D:\\system",
+      "desktop_notes": "D:\\system\\desktop_notes"
+
+
+      "png_file": "D:\\02_cache\\screenshot\\OCR.png",
+      "bmp_file": "D:\\02_cache\\screenshot\\OCR.bmp", 
+      "txt_file": "D:\\02_cache\\screenshot\\OCR.txt"
+
+    
+
+      "screenshot_path": "D:\\temp",
+      "bmp_file": "D:\\02_cache\\screenshot\\OCR.bmp", 
+      "txt_file": "D:\\02_cache\\screenshot\\OCR.txt"
+
+   target_string := action_array[count]
+
+        if mso_config.Has(target_string) {
+            target_map := mso_config[target_string]            
+            target_map["kind"] := "mso"
+        } 
+        else if func_config.Has(target_string) {
+            target_map := func_config[target_string]            
+            target_map["kind"] := "key"
+        } 
+        else if key_config.Has(target_string) {
+            target_map := key_config[target_string]            
+            target_map["kind"] := "key"
+        } 
+        else if run_config.Has(target_string) {
+            target_map := run_config[target_string]            
+            target_map["kind"] := "path"
+        } 
+        else if run_config.Has(target_string) {
+            target_map := key_config[target_string]            
+            target_map["kind"] := "app"
+        } 
+        else if text_config.Has(target_string) {
+            target_map := key_config[target_string]            
+            target_map["kind"] := "text"
+        } 
+        else {
+            count := 0
+            SimpleNotify.hide_all()
+            return
+        }
+
+        target_label := target_map["label"]
+        target_payload := target_map["payload"]
+        color := color_map[count] 
+        
+        run_target(target_payload) 
+
+        if target_label != "unknown"
+            left_info(target_label, color, 5) 
+
+
+run_config
+
+
+
+
+:*:eee::{Home 2}+{End}^v
+:*?:sss::+{End}^c
+:*?:ddd::+{End}^v
+:*:ggg:: SendInput("^v")
+:*?:wjtwjt::wjtwjt@gmail.com
+:*?:huahua::hu@903L2
+:*?:ccc::13661896375@163.com
+:*?:ttt::王俊涛 
+:*?:[[::]
+:*?:dss::王俊涛
+:*?:ooo::[
+:*?:ssd:: Send FormatTime(, "yyMMdd")  
+
+
+
+; #region test
+
+
+; ShowDPI() {
+;     DllCall("GetCursorPos", "Int64*", &pt := 0)
+;     hMon := DllCall("MonitorFromPoint", "Int64", pt, "UInt", 2, "Ptr")
+;     DllCall("Shcore\GetDpiForMonitor", "Ptr", hMon, "Int", 0, "UInt*", &dpiX := 0, "UInt*", &dpiY := 0)
+;     MsgBox dpiX " x " dpiY
+; }
+; ShowDPI()
+
+
+; DpiTest()
+; MsgBox DllCall("GetDpiForWindow", "Ptr", DllCall("WindowFromPoint", "Int64", 0, "Ptr"))
+
+DpiTest() {
+    ; ============ 进程级 DPI 感知模式 ============
+    awareness := _GetProcessDpiAwareness()
+    awarenessName := Map(
+        0, "UNAWARE (系统缩放)",
+        1, "SYSTEM_AWARE (仅主屏)",
+        2, "PER_MONITOR_AWARE (逐屏)"
+    )
+    
+    ; ============ 主屏 DPI（GDI 方式） ============
+    hdc := DllCall("GetDC", "ptr", 0, "ptr")
+    gdiDpiX := DllCall("GetDeviceCaps", "ptr", hdc, "int", 88)  ; LOGPIXELSX
+    gdiDpiY := DllCall("GetDeviceCaps", "ptr", hdc, "int", 90)  ; LOGPIXELSY
+    DllCall("ReleaseDC", "ptr", 0, "ptr", hdc)
+    
+    ; ============ 系统 DPI（Win10+） ============
+    sysDpi := 96
+    try sysDpi := DllCall("GetDpiForSystem", "uint")
+    
+    ; ============ 汇总输出 ============
+    out := "====== DPI 诊断报告 ======`n`n"
+    out .= Format("进程 DPI 感知: {} ({})`n", awareness, awarenessName.Has(awareness) ? awarenessName[awareness] : "未知")
+    out .= Format("系统 DPI (GetDpiForSystem): {}`n", sysDpi)
+    out .= Format("主屏 GDI DPI: {}x{}`n", gdiDpiX, gdiDpiY)
+    out .= Format("A_ScreenDPI: {}`n", A_ScreenDPI)
+    out .= Format("主显示器序号: {}`n`n", MonitorGetPrimary())
+    
+    ; ============ 逐显示器信息 ============
+    count := MonitorGetCount()
+    out .= Format("显示器数量: {}`n", count)
+    out .= "─────────────────────────────`n"
+    
+    loop count {
+        mon := A_Index
+        MonitorGet(mon, &l, &t, &r, &b)
+        MonitorGetWorkArea(mon, &wl, &wt, &wr, &wb)
+        
+        isPrimary := (mon = MonitorGetPrimary()) ? " ★主屏" : ""
+        name := MonitorGetName(mon)
+        
+        w := r - l
+        h := b - t
+        
+        ; 获取 HMONITOR
+        hMon := _MonitorHandleFromRect(l, t, r, b)
+        
+        ; GetDpiForMonitor
+        monDpiX := 0, monDpiY := 0
+        effDpiOk := _GetDpiForMonitor(hMon, 0, &monDpiX, &monDpiY)   ; MDT_EFFECTIVE_DPI
+        
+        angDpiX := 0, angDpiY := 0
+        angDpiOk := _GetDpiForMonitor(hMon, 1, &angDpiX, &angDpiY)   ; MDT_ANGULAR_DPI
+        
+        rawDpiX := 0, rawDpiY := 0
+        rawDpiOk := _GetDpiForMonitor(hMon, 2, &rawDpiX, &rawDpiY)   ; MDT_RAW_DPI
+        
+        ; 缩放百分比
+        scalePct := monDpiX > 0 ? Round(monDpiX / 96 * 100) : "?"
+        
+        ; 相对主屏的补偿系数
+        compensate := monDpiX > 0 && gdiDpiX > 0 ? Round(monDpiX / gdiDpiX, 3) : "?"
+        
+        out .= Format("`n【显示器 #{}】{}{}`n", mon, isPrimary, name ? " (" name ")" : "")
+        out .= Format("  分辨率: {}x{}`n", w, h)
+        out .= Format("  坐标: L={} T={} R={} B={}`n", l, t, r, b)
+        out .= Format("  工作区: L={} T={} R={} B={}`n", wl, wt, wr, wb)
+        out .= Format("  Effective DPI: {}x{} ({}%缩放) {}`n", monDpiX, monDpiY, scalePct, effDpiOk ? "" : "⚠失败")
+        out .= Format("  Angular DPI:   {}x{} {}`n", angDpiX, angDpiY, angDpiOk ? "" : "⚠失败")
+        out .= Format("  Raw DPI:       {}x{} {}`n", rawDpiX, rawDpiY, rawDpiOk ? "" : "⚠失败")
+        out .= Format("  HMONITOR: {}`n", hMon)
+        out .= Format("  补偿系数 (monDpi/primaryDpi): {}`n", compensate)
+        out .= Format("  → 若主屏字号30, 此屏应设: {}`n", monDpiX > 0 && gdiDpiX > 0 ? Round(30 * monDpiX / gdiDpiX) : "?")
+    }
+    
+    ; ============ 鼠标所在屏 ============
+    out .= "`n─────────────────────────────`n"
+    CoordMode("Mouse", "Screen")
+    MouseGetPos(&mx, &my)
+    curMon := _MonitorFromPoint(mx, my)
+    out .= Format("鼠标位置: ({}, {}) → 显示器 #{}`n", mx, my, curMon)
+    
+    ; ============ 显示结果 ============
+    g := Gui("+AlwaysOnTop -DPIScale", "DPI 诊断")
+    g.SetFont("s11", "Consolas")
+    g.Add("Edit", "w650 h550 ReadOnly -Wrap", out)
+    
+    btnCopy := g.Add("Button", "w120", "复制到剪贴板")
+    btnCopy.OnEvent("Click", (*) => (A_Clipboard := out, ToolTip("已复制"), SetTimer((*) => ToolTip(), -1500)))
+    
+    btnRefresh := g.Add("Button", "x+10 w120", "刷新")
+    btnRefresh.OnEvent("Click", (*) => (g.Destroy(), DpiTest()))
+    
+    g.Show()
+    return
+    
+    
+    ; ============ 内部函数 ============
+    
+    _GetProcessDpiAwareness() {
+        awareness := 0
+        try DllCall("Shcore\GetProcessDpiAwareness", "ptr", 0, "int*", &awareness)
+        return awareness
+    }
+    
+    _MonitorHandleFromRect(l, t, r, b) {
+        ; 取中心点 → MonitorFromPoint
+        cx := (l + r) // 2
+        cy := (t + b) // 2
+        pt64 := cx | (cy << 32)
+        return DllCall("MonitorFromPoint", "int64", pt64, "uint", 2, "ptr")  ; MONITOR_DEFAULTTONEAREST
+    }
+    
+    _GetDpiForMonitor(hMon, type, &dpiX, &dpiY) {
+        dpiX := 0, dpiY := 0
+        try {
+            hr := DllCall("Shcore\GetDpiForMonitor", "ptr", hMon, "uint", type,
+                          "uint*", &dpiX, "uint*", &dpiY)
+            return hr = 0
+        }
+        return false
+    }
+    
+    _MonitorFromPoint(x, y) {
+        loop MonitorGetCount() {
+            MonitorGet(A_Index, &l, &t, &r, &b)
+            if (x >= l && x < r && y >= t && y < b)
+                return A_Index
+        }
+        return MonitorGetPrimary()
+    }
+}
+
+
+; #endregion
+
+; xxxxxxxxxxxxxxxxxxxxxx
+
+
+
+#HotIf mouse_edge()
+
+MButton:: CycAct.fast("{Volume_Mute}", "{Volume_Mute}")
+WheelUp:: SendInput("{volume_up}")      ; 滚轮上 - 音量增加
+WheelDown:: SendInput("{volume_down}")    ; 滚轮下 - 音量减少
+
+
+2:: CycAct.slow("url_chatgpt", "url_gpt_image")
+3:: CycAct.slow("app_qianwen", "url_deepseek", "app_doubao")
+4:: CycAct.slow("app_qianwen", "url_deepseek", "do_nothing")
+q:: CycAct.slow("url_zhyw")
+w:: CycAct.slow("app_wechat")
+e:: CycAct.slow("app_everything")
+; e:: CycAct.slow("{PgUp}")
+r:: CycAct.slow("app_everything")
+t:: CycAct.slow("app_typora")
+a:: CycAct.slow("url_yunwu", "app_cherrystudio")
+s:: CycAct.slow("app_vscode", "app_spy", "file_shortcut", "url_ahk_help", "url_ahk_forum", "do_nothing")
+d:: CycAct.slow("open_current_path", "open_recycle_bin", "path_rcgz", "clsid_recycle_bin", "do_nothing")
+; d:: CycAct.slow("{PgDn}")
+f:: CycAct.slow("open_current_path", "app_excel", "app_baidu", "do_nothing")
+g:: CycAct.slow("app_notepad")
+z:: CycAct.slow("app_powershell", "app_powershell_admin", "app_powershell_terminal", "app_cmd", "do_nothing")
+x:: CycAct.slow("app_word", "app_mailmaster", "app_youdaodict", "do_nothing")
+c:: CycAct.slow("close_window_in_taskbar")
+v:: CycAct.slow("url_bilibili", "url_qqlive", "url_xiaohongshu", "url_iqiyi", "url_douyin", "do_nothing")
+b:: CycAct.slow("^!+1", "^!+2", "^!+3", "^!+4")
+
+XButton1 & 2:: CycAct.slow("url_yunwu", "url_lovart", "url_claude", "url_chatgpt", "url_gemini", "url_copilot", "do_nothing")
+XButton1 & 3:: CycAct.slow("app_qianwen", "url_deepseek", "app_doubao", "url_coze", "url_kimi", "do_nothing")
+XButton1 & 4:: CycAct.slow("app_qianwen", "url_deepseek", "do_nothing")
+XButton1 & q:: CycAct.slow("url_zhyw", "url_zhlmt", "url_wjx", "do_nothing")
+XButton1 & w:: CycAct.slow("app_wechat", "app_wxwork", "app_wemeet", "do_nothing")
+XButton1 & e:: CycAct.slow("app_everything", "app_evernote", "app_eagle", "do_nothing")
+XButton1 & r:: CycAct.slow("app_powerpoint", "app_eagle", "app_evernote", "do_nothing")
+XButton1 & t:: CycAct.slow("app_typora")
+XButton1 & a:: CycAct.slow("app_cherrystudio")
+XButton1 & s:: CycAct.slow("app_vscode", "app_spy", "file_shortcut", "url_ahk_help", "url_ahk_forum", "do_nothing")
+XButton1 & d:: CycAct.slow("open_current_path", "open_recycle_bin", "open_duty_schedule", "do_nothing")
+XButton1 & f:: CycAct.slow("app_notepad", "app_excel", "app_baidu", "do_nothing")
+XButton1 & g:: CycAct.slow("url_jd", "url_xianyu", "url_taobao", "do_nothing")
+XButton1 & z:: CycAct.slow("app_powershell", "app_powershell_admin", "app_powershell_terminal", "app_cmd", "do_nothing")
+XButton1 & x:: CycAct.slow("app_word", "app_mailmaster", "app_youdaodict", "do_nothing")
+XButton1 & c:: CycAct.slow("close_window_in_taskbar")
+XButton1 & v:: CycAct.slow("url_bilibili", "url_qqlive", "url_xiaohongshu", "url_iqiyi", "url_douyin", "do_nothing")
+XButton1 & b:: CycAct.slow("path_pbb_server", "path_wh_server", "path_gr_server", "do_nothing")
+
+F23:: CycAct.slow("!+{Tab}")
+; F24:: CycAct.slow("app_keyboard") 
+
+Space:: CycAct.slow("app_keyboard")
+
+; RShift:: CycAct.slow("!#{Space}")
+; RControl:: CycAct.slow("url_chatgpt")
+RButton:: CycAct.slow("!#{Space}")
+
+XButton1:: IMECtrl.to_chinese(), Notify.show("中文输入法", "info", 500), SendInput("#h")
+
+#HotIf    
+
