@@ -691,6 +691,11 @@
 },
 
 
+"path_weekly_report": {
+  "payload": "D:\\work_files\\report_files\\2026周报_王俊涛.xlsx",
+  "label": "周    报",
+  "kind": "path"
+},
 
 
 "path_pbb_server": {
