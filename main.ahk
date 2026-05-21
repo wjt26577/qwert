@@ -634,8 +634,7 @@ b & XButton2:: CycAct.slow("show_thishotkey")
 #HotIf
 ; #endregion
 ; #region not text_mode && not ppt
-#HotIf !is_text_mode() && !WinActive("ahk_class PPTFrameClass")    
-               
+#HotIf !WinActive("ahk_class PPTFrameClass")   
 
 2:: mouse_top() ? CycAct.slow("url_chatgpt", "url_yunwu", "url_lovart")                         : (mouse_edge() ? CycAct.slow("show_thishotkey")            : (SendInput("{Delete}")))            
 q:: mouse_top() ? CycAct.slow("show_thishotkey", "show_thishotkey", "show_thishotkey")          : (mouse_edge() ? CycAct.slow("show_thishotkey")            : (enter_text_mode(), send_with_capslock("q")))            
@@ -777,10 +776,10 @@ RButton & 4::       mouse_top() ? CycAct.slow("url_chatgpt", "url_yunwu", "url_l
 RButton & q::       mouse_top() ? CycAct.slow("url_chatgpt", "url_yunwu", "url_lovart")    : (mouse_edge() ? CycAct.slow("show_thishotkey")               : CycAct.slow("url_zhyw", "url_zhlmt", "url_wjx", "do_nothing"))
 RButton & w::       mouse_top() ? CycAct.slow("url_chatgpt", "url_yunwu", "url_lovart")    : (mouse_edge() ? CycAct.slow("{Escape}")                      : CycAct.slow("app_wechat", "app_wxwork", "app_wemeet", "do_nothing"))
 RButton & e::       mouse_top() ? CycAct.slow("url_chatgpt", "url_yunwu", "url_lovart")    : (mouse_edge() ? CycAct.slow("^{WheelUp}")                    : CycAct.slow("app_everything", "app_evernote", "app_eagle", "do_nothing"))
-RButton & r::       mouse_top() ? CycAct.slow("url_chatgpt", "url_yunwu", "url_lovart")    : (mouse_edge() ? CycAct.slow("^z")                            : CycAct.slow("app_powerpoint", "app_eagle", "app_evernote", "do_nothing"))
-RButton & t::       mouse_top() ? CycAct.slow("url_chatgpt", "url_yunwu", "url_lovart")    : (mouse_edge() ? CycAct.slow("^y")                            : CycAct.slow("app_typora"))
+RButton & r::       mouse_top() ? CycAct.slow("url_chatgpt", "url_yunwu", "url_lovart")    : (mouse_edge() ? CycAct.slow("^z")                            : CycAct.slow("^z"))
+RButton & t::       mouse_top() ? CycAct.slow("url_chatgpt", "url_yunwu", "url_lovart")    : (mouse_edge() ? CycAct.slow("^y")                            : CycAct.slow("^y"))
 RButton & a::       mouse_top() ? CycAct.slow("url_chatgpt", "url_yunwu", "url_lovart")    : (mouse_edge() ? CycAct.slow("show_thishotkey")               : CycAct.slow("app_cherrystudio"))
-RButton & s::       mouse_top() ? CycAct.slow("url_chatgpt", "url_yunwu", "url_lovart")    : (mouse_edge() ? CycAct.slow("+#{Left}")                      : CycAct.slow("app_vscode", "app_spy", "file_shortcut", "url_ahk_help", "url_ahk_forum", "do_nothing"))
+RButton & s::       mouse_top() ? CycAct.slow("url_chatgpt", "url_yunwu", "url_lovart")    : (mouse_edge() ? CycAct.slow("+#{Left}")                      : CycAct.slow("+#{Left}"))
 RButton & d::       mouse_top() ? CycAct.slow("url_chatgpt", "url_yunwu", "url_lovart")    : (mouse_edge() ? CycAct.slow("^{WheelDown}")                  : CycAct.slow("open_current_path", "open_recycle_bin", "open_duty_schedule", "do_nothing"))
 RButton & f::       mouse_top() ? CycAct.slow("path_weekly_report")    : (mouse_edge() ? CycAct.slow("show_thishotkey")               : CycAct.slow("app_notepad", "app_excel", "app_baidu", "do_nothing"))
 RButton & g::       mouse_top() ? CycAct.slow("url_chatgpt", "url_yunwu", "url_lovart")    : (mouse_edge() ? CycAct.slow("paste_format")                  : CycAct.slow("url_jd", "url_xianyu", "url_taobao", "do_nothing"))
@@ -804,6 +803,7 @@ XButton2 & r::      !mouse_edge() ? CycAct.slow("show_thishotkey")              
 XButton2 & t::      !mouse_edge() ? CycAct.slow("show_thishotkey")               : CycAct.slow("show_thishotkey") 
 XButton2 & a::      !mouse_edge() ? CycAct.slow("move_tab_new_window")               : CycAct.slow("show_thishotkey") 
 XButton2 & s::      !mouse_edge() ? CycAct.slow("{Left}")                        : CycAct.slow("{Left}")          
+
 XButton2 & d::      !mouse_edge() ? CycAct.slow("{Down}")                        : CycAct.slow("{Down}")          
 XButton2 & f::      !mouse_edge() ? CycAct.slow("{Right}")                       : CycAct.slow("{Right}")         
 XButton2 & g::      !mouse_edge() ? CycAct.slow("show_thishotkey")               : CycAct.slow("show_thishotkey") 
