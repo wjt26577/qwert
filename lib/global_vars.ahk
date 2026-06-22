@@ -743,6 +743,7 @@ mso_config := Map(
 )   
  
 func_config := Map( 
+    "open_powershell_in_folder", Map("payload", "open_powershell_in_folder", "label", "PowerShell", "kind", "func"),
     "paste_ai_prompt_1", Map("payload", "paste_ai_prompt_1", "label", "音律通用提示词", "kind", "func"),
     "paste_ai_prompt_2", Map("payload", "paste_ai_prompt_2", "label", "音律重建总控提示词", "kind", "func"),
     "paste_ai_prompt_3", Map("payload", "paste_ai_prompt_3", "label", "音律PPT复刻提示词", "kind", "func"),
@@ -829,6 +830,7 @@ key_config := Map(
     "^+c", Map("payload", "^+c", "label", "Ctrl + Shift + C", "kind", "key"),
     "#c", Map("payload", "#c", "label", "Win + C", "kind", "key"),
     "!c", Map("payload", "!c", "label", "Alt + C", "kind", "key"),
+    "^+!c", Map("payload", "^+!c", "label", "ChatGPT", "kind", "key"),
     "^d", Map("payload", "^d", "label", "Ctrl + D", "kind", "key"),
     "^+d", Map("payload", "^+d", "label", "Ctrl + Shift + D", "kind", "key"),
     "#d", Map("payload", "#d", "label", "Win + D", "kind", "key"),
@@ -926,6 +928,11 @@ key_config := Map(
     "^+;", Map("payload", "^+;", "label", "Ctrl + Shift + `;", "kind", "key"),
     "#;", Map("payload", "#;", "label", "Win + `;", "kind", "key"),
     "!;", Map("payload", "!;", "label", "Alt + `;", "kind", "key"),
+
+    "^k^o", Map("payload", "^k^o", "label", "Ctrl + K Ctrl + O", "kind", "key"),
+    "^/", Map("payload", "^/", "label", "Ctrl + /", "kind", "key"),
+    "^``", Map("payload", "^``", "label", "Ctrl + ``", "kind", "key"),
+
     "{F1}", Map("payload", "{F1}", "label", "F1", "kind", "key"),
     "{F2}", Map("payload", "{F2}", "label", "F2", "kind", "key"),
     "{F3}", Map("payload", "{F3}", "label", "F3", "kind", "key"),

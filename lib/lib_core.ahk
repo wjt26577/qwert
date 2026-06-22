@@ -5,6 +5,10 @@
 
 ; #region function core
 
+save_as() {
+	WinActive('ahk_group group_office') ? Send('{F12}') : Send('^+s')
+}
+
 copy_or_cut_by_count() {
     try {
         static count := 0
@@ -25,6 +29,10 @@ copy_or_cut_by_count() {
                 SendInput("c{Ctrl Up}{Esc 2}")
             }
 
+            if WinActive("ahk_exe POWERPNT.EXE") {		
+                SendInput("^+c")
+            }
+            
             ; Word 复制格式
             if WinActive("ahk_exe WINWORD.EXE") {
                 word_application := ComObjActive("Word.Application")
@@ -402,7 +410,7 @@ class CycAct {
                 this.target_map := get_target_map(this.actions[1])
                 label := this.target_map["label"]
                 if label != "unknown"
-                    Notify.show(label, "info", 500)
+                    Notify.show(label, "info", 300)
 
                 run_target(get_target_map(this.actions[1]))
                 return
@@ -732,3 +740,9 @@ move_tab_new_window() {
     WinMaximize("A")
 }
 
+open_powershell_in_folder() {
+    folder_path := FileSelect('D',, '请选择文件夹')
+    if !folder_path
+        return
+    Run 'wt.exe -p PowerShell -d "' folder_path '"'
+}

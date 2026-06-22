@@ -5,6 +5,12 @@
   "kind": "app"
 },
 
+"app_chatgpt": {
+  "payload": "explorer.exe `\"shell:AppsFolder\\OpenAI.ChatGPT-Desktop_2p2nqsd0c76g0!ChatGPT`\"",
+  "label": "ChatGPT",
+  "kind": "app"
+},
+
 "app_obsidian": {
   "payload": "C:\\Program Files\\Obsidian\\Obsidian.exe",
   "label": "Obsidian",
@@ -36,7 +42,7 @@
 },
 
 "app_vscode": {
-  "payload": "C:\\Program Files\\Microsoft VS Code\\Code.exe",
+  "payload": "C:\\Program Files\\Microsoft VS Code\\Code.exe -n",
   "label": "Visual Studio Code",
   "kind": "app"
 },
@@ -60,7 +66,7 @@
 },
 
 "app_everything": {
-  "payload": "C:\\Program Files\\everything\\Everything.exe",
+  "payload": "D:\\app\\Everything 1.5a\\Everything.exe",
   "label": "Everything",
   "kind": "app"
 },
@@ -480,7 +486,7 @@
 
 "url_bilibili": {
   "payload": "https://www.bilibili.com/",
-  "label": "哔哩哔哩",
+  "label": "哔哩哔哩 (゜-゜)つロ 干杯~-bilibili",
   "kind": "path"
 },
 

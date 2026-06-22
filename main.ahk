@@ -1,6 +1,11 @@
 ; #region 启动程序
-#SingleInstance Force
 #Requires AutoHotkey v2.0
+
+#UseHook true
+#SingleInstance Force
+InstallKeybdHook
+InstallMouseHook
+
 
 try DllCall("SetThreadDpiAwarenessContext", "ptr", -4, "ptr")
 
@@ -10,6 +15,7 @@ try DllCall("SetThreadDpiAwarenessContext", "ptr", -4, "ptr")
 #Include <Notify>
 #Include <IMECtrl>
 #Include <step_clip>  
+#Include <step_text>  
 #Include <lib_office_function>
 #Include <baidu_api>
 #Include <class_http>
@@ -230,48 +236,48 @@ save_before_reload() {
     ; XButton1 & 3::  ("text | [捂脸]`n | 捂  脸", "text | [呲牙]`n | 呲  牙", "text | [抠鼻]`n | 抠  鼻")  
     
     ; 没问题，可以的。好的，知道了。好的，没问题。
-; F23 & 2:: ("text | 收到啦，多谢!`n | 收  到", "text | [OK]`n | 👌")
-; F23 & 4:: ("text | [强]`n | 👍", "text | [抱拳]`n | 抱  拳")
-; F23 & q:: show_thishotkey()
-; F23 & w:: ("text | 收到`n | 收  到", "text | [OK]`n | 👌", "text | [强]`n | 👍", "text | [抱拳]`n | 抱  拳")
-; F23 & r:: ("text | 没问题，可以的。`n | 没问题，可以的。", "text | [OK]`n | 👌", "text | [强]`n | 👍", "text | [抱拳]`n | 抱  拳")
-; F23 & t:: ("text | 好的，知道了。`n | 好的，知道了。", "inpt | 好的，没问题。`n | 好的，没问题。", "text | 谢了啊`n | 谢了啊", "text | [抱拳]`n | 抱  拳")
-; F23 & a:: show_thishotkey()
-; F23 & g:: show_thishotkey()
-; F23 & z:: show_thishotkey()
-; F23 & x:: show_thishotkey()
-; F23 & c:: show_thishotkey()
-; F23 & b:: show_thishotkey()
+; F13 & 2:: ("text | 收到啦，多谢!`n | 收  到", "text | [OK]`n | 👌")
+; F13 & 4:: ("text | [强]`n | 👍", "text | [抱拳]`n | 抱  拳")
+; F13 & q:: show_thishotkey()
+; F13 & w:: ("text | 收到`n | 收  到", "text | [OK]`n | 👌", "text | [强]`n | 👍", "text | [抱拳]`n | 抱  拳")
+; F13 & r:: ("text | 没问题，可以的。`n | 没问题，可以的。", "text | [OK]`n | 👌", "text | [强]`n | 👍", "text | [抱拳]`n | 抱  拳")
+; F13 & t:: ("text | 好的，知道了。`n | 好的，知道了。", "inpt | 好的，没问题。`n | 好的，没问题。", "text | 谢了啊`n | 谢了啊", "text | [抱拳]`n | 抱  拳")
+; F13 & a:: show_thishotkey()
+; F13 & g:: show_thishotkey()
+; F13 & z:: show_thishotkey()
+; F13 & x:: show_thishotkey()
+; F13 & c:: show_thishotkey()
+; F13 & b:: show_thishotkey()
 
 #HotIf
 
 
 
 #HotIf WinActive("ahk_class TTOTAL_CMD")    
-    F24 & 1:: process_ppt_full_process() 
-    ; F24 & 2:: process_ppt_split_only()
-    F24 & 3:: process_ppt_export_only()
-    F24 & 4:: process_ppt_organize_only()
-    ; ; F24 & 3:: process_powerpoint_export_and_organize() 
-    ; F24 & Tab:: split_ppt_to_single() 
-    ; F24 & 3:: split_ppt_to_single_main("", 50)  ; 50为每批大小，可自定义
+    F14 & 1:: process_ppt_full_process() 
+    ; F14 & 2:: process_ppt_split_only()
+    F14 & 3:: process_ppt_export_only()
+    F14 & 4:: process_ppt_organize_only()
+    ; ; F14 & 3:: process_powerpoint_export_and_organize() 
+    ; F14 & Tab:: split_ppt_to_single() 
+    ; F14 & 3:: split_ppt_to_single_main("", 50)  ; 50为每批大小，可自定义
 #HotIf
 
 #HotIf WinActive("ahk_class Notepad")    
-    ; F24 & 1:: process_ppt_full_process() 
-    ; F24 & 2:: process_ppt_split_only()
-    ; F24 & 3:: process_ppt_export_only()
-    ; F24 & 4:: process_ppt_organize_only()
-    ; F24 & 3:: process_powerpoint_export_and_organize() 
-    ; F24 & Tab:: split_ppt_to_single() 
-    ; F24 & 3:: split_ppt_to_single_main("", 50)  ; 50为每批大小，可自定义
+    ; F14 & 1:: process_ppt_full_process() 
+    ; F14 & 2:: process_ppt_split_only()
+    ; F14 & 3:: process_ppt_export_only()
+    ; F14 & 4:: process_ppt_organize_only()
+    ; F14 & 3:: process_powerpoint_export_and_organize() 
+    ; F14 & Tab:: split_ppt_to_single() 
+    ; F14 & 3:: split_ppt_to_single_main("", 50)  ; 50为每批大小，可自定义
 #HotIf
 
 
 
 #HotIf WinActive("ahk_class PotPlayer64")
-    F24:: SendInput(",") 
-    F23:: SendInput(".") 
+    F14:: SendInput(",") 
+    F13:: SendInput(".") 
     XButton1:: SendInput("{Right}") 
     XButton2:: SendInput("{Left}")
 #HotIf
@@ -417,7 +423,7 @@ StrJoin(arr, delimiter) {
         }
     }
   
-    ; F24 & f:: SendInput("^c^r{Right}{Enter}^v{Enter}") 
+    ; F14 & f:: SendInput("^c^r{Right}{Enter}^v{Enter}") 
        
     
     
@@ -425,7 +431,7 @@ StrJoin(arr, delimiter) {
 
     ; XButton1:: fast_cat("+{MButton}", "+{LButton}")
 
-    ; F24:: bb
+    ; F14:: bb
 
 
    
@@ -485,15 +491,15 @@ StrJoin(arr, delimiter) {
 
     Tab & j:: SendInput("^{Right 2}^+{Left}")
 
-    ; F23:: {
+    ; F13:: {
     ;     SendInput("!+{LButton}")
     ; } 
 
-    ; F23 & r:: {
+    ; F13 & r:: {
     ;     SendInput("^!+l")
     ; }  
 
-    ; F23 & g:: {
+    ; F13 & g:: {
     ;     SendInput("^!+u")
     ; }   
 
@@ -512,6 +518,7 @@ StrJoin(arr, delimiter) {
 #HotIf
 
 
+
 ; #endregion
 
 ; #region not text_mode && ppt 
@@ -527,7 +534,7 @@ t:: !mouse_top() ? (!mouse_edge() ? send_with_capslock("t")    : CycAct.slow("ur
 a:: !mouse_top() ? (!mouse_edge() ? send_with_capslock("a")    : CycAct.slow("url_zhyw")                 ) : CycAct.slow("url_zhyw")                
 s:: !mouse_top() ? (!mouse_edge() ? send_with_capslock("s")    : CycAct.slow("app_vscode")               ) : CycAct.slow("app_vscode")              
 d:: !mouse_top() ? (!mouse_edge() ? send_with_capslock("d")    : CycAct.slow("open_current_path")        ) : CycAct.slow("open_current_path")       
-f:: !mouse_top() ? (!mouse_edge() ? copy_or_cut_by_count()     : CycAct.slow("open_current_path")        ) : CycAct.slow("open_current_path")       
+; f:: !mouse_top() ? (!mouse_edge() ? copy_or_cut_by_count()     : CycAct.slow("open_current_path")        ) : CycAct.slow("open_current_path")       
 g:: !mouse_top() ? (!mouse_edge() ? send_with_capslock("g")    : CycAct.slow("app_notepad")              ) : CycAct.slow("app_notepad")             
 z:: !mouse_top() ? (!mouse_edge() ? send_with_capslock("z")    : CycAct.slow("app_powershell_terminal")           ) : CycAct.slow("app_powershell")          
 x:: !mouse_top() ? (!mouse_edge() ? send_with_capslock("x")    : CycAct.slow("app_word")                 ) : CycAct.slow("app_word")                
@@ -561,19 +568,19 @@ x & LButton:: CycAct.slow("show_thishotkey")
 c & LButton:: CycAct.slow("show_thishotkey")
 b & LButton:: CycAct.slow("show_thishotkey")
 
-q & F23:: CycAct.slow("show_thishotkey")
-w & F23:: CycAct.slow("show_thishotkey")
-e & F23:: CycAct.slow("show_thishotkey")
-r & F23:: CycAct.slow("show_thishotkey")
-t & F23:: CycAct.slow("show_thishotkey")
-a & F23:: CycAct.slow("show_thishotkey")
-s & F23:: CycAct.slow("show_thishotkey")
-d & F23:: CycAct.slow("show_thishotkey")
-g & F23:: CycAct.slow("show_thishotkey")
-z & F23:: CycAct.slow("show_thishotkey")
-x & F23:: CycAct.slow("show_thishotkey")
-c & F23:: CycAct.slow("show_thishotkey")
-b & F23:: CycAct.slow("show_thishotkey")
+q & F13:: CycAct.slow("show_thishotkey")
+w & F13:: CycAct.slow("show_thishotkey")
+e & F13:: CycAct.slow("show_thishotkey")
+r & F13:: CycAct.slow("show_thishotkey")
+t & F13:: CycAct.slow("show_thishotkey")
+a & F13:: CycAct.slow("show_thishotkey")
+s & F13:: CycAct.slow("show_thishotkey")
+d & F13:: CycAct.slow("show_thishotkey")
+g & F13:: CycAct.slow("show_thishotkey")
+z & F13:: CycAct.slow("show_thishotkey")
+x & F13:: CycAct.slow("show_thishotkey")
+c & F13:: CycAct.slow("show_thishotkey")
+b & F13:: CycAct.slow("show_thishotkey")
 
 q & RButton:: CycAct.slow("show_thishotkey")
 w & RButton:: CycAct.slow("AlignDistributeVertically")
@@ -589,19 +596,19 @@ x & RButton:: CycAct.slow("show_thishotkey")
 c & RButton:: CycAct.slow("show_thishotkey")
 b & RButton:: CycAct.slow("resize_by_guides")
 
-q & F24:: CycAct.slow("show_thishotkey")
-w & F24:: CycAct.slow("show_thishotkey")
-e & F24:: CycAct.slow("show_thishotkey")
-r & F24:: CycAct.slow("show_thishotkey")
-t & F24:: CycAct.slow("show_thishotkey")
-a & F24:: CycAct.slow("show_thishotkey")
-s & F24:: CycAct.slow("show_thishotkey")
-d & F24:: CycAct.slow("show_thishotkey")
-g & F24:: CycAct.slow("show_thishotkey")
-z & F24:: CycAct.slow("show_thishotkey")
-x & F24:: CycAct.slow("show_thishotkey")
-c & F24:: CycAct.slow("show_thishotkey")
-b & F24:: CycAct.slow("show_thishotkey")
+q & F14:: CycAct.slow("show_thishotkey")
+w & F14:: CycAct.slow("show_thishotkey")
+e & F14:: CycAct.slow("show_thishotkey")
+r & F14:: CycAct.slow("show_thishotkey")
+t & F14:: CycAct.slow("show_thishotkey")
+a & F14:: CycAct.slow("show_thishotkey")
+s & F14:: CycAct.slow("show_thishotkey")
+d & F14:: CycAct.slow("show_thishotkey")
+g & F14:: CycAct.slow("show_thishotkey")
+z & F14:: CycAct.slow("show_thishotkey")
+x & F14:: CycAct.slow("show_thishotkey")
+c & F14:: CycAct.slow("show_thishotkey")
+b & F14:: CycAct.slow("show_thishotkey")
 
 q & XButton1:: CycAct.fast("ObjectsAlignTopSmart", "ObjectsAlignMiddleVerticalSmart", "ObjectsAlignBottomSmart")
 w & XButton1:: CycAct.fast("ObjectsAlignLeftSmart", "ObjectsAlignCenterHorizontalSmart", "ObjectsAlignRightSmart")
@@ -634,31 +641,67 @@ b & XButton2:: CycAct.slow("show_thishotkey")
 #HotIf
 ; #endregion
 ; #region not text_mode && not ppt
-#HotIf !WinActive("ahk_class PPTFrameClass")   
 
-2:: mouse_top() ? CycAct.slow("url_chatgpt", "url_yunwu", "url_lovart")                         : (mouse_edge() ? CycAct.slow("show_thishotkey")            : (SendInput("{Delete}")))            
+#HotIf !text_mode 
+
+2:: mouse_top() ? CycAct.slow("open_powershell_in_folder") : (mouse_edge() ? CycAct.slow("show_thishotkey") : (SendInput("{Delete}")))           
+; 3:: mouse_top() ? CycAct.slow("open_powershell_in_folder") : (mouse_edge() ? CycAct.slow("show_thishotkey") : (SendInput("{Delete}")))           
+f:: mouse_top() ? CycAct.slow("open_current_path") : (mouse_edge() ? CycAct.slow("open_current_path") : copy_or_cut_by_count())
+v:: mouse_top() ? CycAct.slow("url_bilibili", "url_qqlive", "url_xiaohongshu") : (mouse_edge() ? CycAct.slow("url_bilibili") : SendInput("^v"))
+
+#HotIf 
+
+#HotIf WinActive('选择文件夹 ahk_class #32770') || WinActive('Choose folder ahk_class #32770')
+    Enter::ControlClick 'Button1', 'A'
+#HotIf
+
+#HotIf !WinActive("ahk_class PPTFrameClass")  
+
+; 2:: mouse_top() ? CycAct.slow("url_chatgpt", "url_yunwu", "url_lovart")                         : (mouse_edge() ? CycAct.slow("show_thishotkey")            : (SendInput("{Delete}")))            
+; q:: mouse_top() ? CycAct.slow("show_thishotkey", "show_thishotkey", "show_thishotkey")          : (mouse_edge() ? CycAct.slow("show_thishotkey")            : (enter_text_mode(), send_with_capslock("q")))            
+; w:: mouse_top() ? CycAct.slow("app_wechat", "app_wemeet", "app_wxwork")                         : (mouse_edge() ? CycAct.slow("app_wechat")                 : (enter_text_mode(), send_with_capslock("w")))
+; e:: mouse_top() ? CycAct.slow("app_everything", "app_eagle", "app_evernote")                    : (mouse_edge() ? CycAct.slow("{PgUp}")                     : (enter_text_mode(), send_with_capslock("e")))
+; r:: mouse_top() ? CycAct.slow("app_obsidian", "app_typora", "show_thishotkey")                  : (mouse_edge() ? CycAct.slow("app_obsidian")               : (enter_text_mode(), send_with_capslock("r")))
+; t:: mouse_top() ? CycAct.slow("show_time")                                                      : (mouse_edge() ? CycAct.slow("show_time")            : (enter_text_mode(), send_with_capslock("t")))
+; a:: mouse_top() ? CycAct.slow("app_powershell_terminal", "show_thishotkey", "show_thishotkey")  : (mouse_edge() ? CycAct.slow("show_thishotkey")            : (enter_text_mode(), send_with_capslock("a")))
+; s:: mouse_top() ? CycAct.slow("app_vscode", "app_spy", "file_shortcut")                         : (mouse_edge() ? CycAct.slow("app_vscode")                 : (enter_text_mode(), send_with_capslock("s")))
+; d:: mouse_top() ? CycAct.slow("open_current_path", "show_thishotkey", "show_thishotkey")        : (mouse_edge() ? CycAct.slow("{PgDn}")                     : (enter_text_mode(), send_with_capslock("d")))
+; f:: mouse_top() ? CycAct.slow("app_codex", "show_thishotkey", "show_thishotkey")                : (mouse_edge() ? CycAct.slow("open_current_path")          : (copy_or_cut_by_count()                    ))
+; g:: mouse_top() ? CycAct.slow("app_notepad", "show_thishotkey", "show_thishotkey")              : (mouse_edge() ? CycAct.slow("app_notepad")                : (enter_text_mode(), send_with_capslock("g")))
+; z:: mouse_top() ? CycAct.slow("app_powershell_terminal")                                        : (mouse_edge() ? CycAct.slow("app_powershell")             : (enter_text_mode(), send_with_capslock("z")))
+; x:: mouse_top() ? CycAct.slow("app_word", "show_thishotkey", "show_thishotkey")                 : (mouse_edge() ? CycAct.slow("app_word")                   : (enter_text_mode(), send_with_capslock("x")))
+; c:: mouse_top() ? CycAct.slow("close_window_in_taskbar", "show_thishotkey", "show_thishotkey")  : (mouse_edge() ? CycAct.slow("close_window_in_taskbar")    : (enter_text_mode(), send_with_capslock("c")))
+; v:: mouse_top() ? CycAct.slow("url_bilibili", "url_qqlive", "url_xiaohongshu")                  : (mouse_edge() ? CycAct.slow("url_bilibili")               : (SendInput("^v")                           ))
+; b:: mouse_top() ? CycAct.slow("^+!w")            : (mouse_edge() ? CycAct.slow("^!+2", "^!+1", "^!+3")       : (enter_text_mode(), send_with_capslock("b")))
+
 q:: mouse_top() ? CycAct.slow("show_thishotkey", "show_thishotkey", "show_thishotkey")          : (mouse_edge() ? CycAct.slow("show_thishotkey")            : (enter_text_mode(), send_with_capslock("q")))            
-w:: mouse_top() ? CycAct.slow("app_wechat", "app_wemeet", "app_wxwork")                         : (mouse_edge() ? CycAct.slow("app_wechat")                 : (enter_text_mode(), send_with_capslock("w")))
-e:: mouse_top() ? CycAct.slow("app_everything", "app_eagle", "app_evernote")                    : (mouse_edge() ? CycAct.slow("{PgUp}")                     : (enter_text_mode(), send_with_capslock("e")))
-r:: mouse_top() ? CycAct.slow("app_obsidian", "app_typora", "show_thishotkey")                  : (mouse_edge() ? CycAct.slow("app_obsidian")               : (enter_text_mode(), send_with_capslock("r")))
-t:: mouse_top() ? CycAct.slow("show_time")                                                      : (mouse_edge() ? CycAct.slow("show_time")            : (enter_text_mode(), send_with_capslock("t")))
+; w:: mouse_top() ? CycAct.slow("app_wechat", "app_wemeet", "app_wxwork")                         : (mouse_edge() ? CycAct.slow("app_wechat")                 : (enter_text_mode(), send_with_capslock("w")))
+w:: mouse_top() ? CycAct.slow("app_wechat")                         : (mouse_edge() ? CycAct.slow("app_wechat")                 : (enter_text_mode(), send_with_capslock("w")))
+; e:: mouse_top() ? CycAct.slow("{PgUp}")                    : (mouse_edge() ? CycAct.slow("app_everything", "app_eagle", "app_evernote")                     : (enter_text_mode(), send_with_capslock("e")))
+e:: mouse_top() ? CycAct.slow("app_everything")                    : (mouse_edge() ? CycAct.slow("{PgUp}")                     : (enter_text_mode(), send_with_capslock("e")))
+r:: mouse_top() ? CycAct.slow("open_powershell_in_folder")                   : (mouse_edge() ? CycAct.slow("app_obsidian")               : (enter_text_mode(), send_with_capslock("r")))
+t:: mouse_top() ? CycAct.slow("^y")                                                      : (mouse_edge() ? CycAct.slow("show_time")            : (enter_text_mode(), send_with_capslock("t")))
 a:: mouse_top() ? CycAct.slow("app_powershell_terminal", "show_thishotkey", "show_thishotkey")  : (mouse_edge() ? CycAct.slow("show_thishotkey")            : (enter_text_mode(), send_with_capslock("a")))
-s:: mouse_top() ? CycAct.slow("app_vscode", "app_spy", "file_shortcut")                         : (mouse_edge() ? CycAct.slow("app_vscode")                 : (enter_text_mode(), send_with_capslock("s")))
-d:: mouse_top() ? CycAct.slow("open_current_path", "show_thishotkey", "show_thishotkey")        : (mouse_edge() ? CycAct.slow("{PgDn}")                     : (enter_text_mode(), send_with_capslock("d")))
-f:: mouse_top() ? CycAct.slow("app_codex", "show_thishotkey", "show_thishotkey")                : (mouse_edge() ? CycAct.slow("open_current_path")          : (copy_or_cut_by_count()                    ))
+; s:: mouse_top() ? CycAct.slow("app_vscode", "app_spy", "file_shortcut")                         : (mouse_edge() ? CycAct.slow("app_vscode")                 : (enter_text_mode(), send_with_capslock("s")))
+s:: mouse_top() ? CycAct.slow("app_vscode")                         : (mouse_edge() ? CycAct.slow("app_vscode")                 : (enter_text_mode(), send_with_capslock("s")))
+d:: mouse_top() ? CycAct.slow("^+!c")        : (mouse_edge() ? CycAct.slow("{PgDn}")                     : (enter_text_mode(), send_with_capslock("d")))
+; f:: mouse_top() ? CycAct.slow("app_codex", "show_thishotkey", "show_thishotkey")                : (mouse_edge() ? CycAct.slow("open_current_path")          : send_with_capslock("f"))
+f:: mouse_top() ? CycAct.slow("open_current_path")                                              : (mouse_edge() ? CycAct.slow("open_current_path")          : send_with_capslock("f"))
 g:: mouse_top() ? CycAct.slow("app_notepad", "show_thishotkey", "show_thishotkey")              : (mouse_edge() ? CycAct.slow("app_notepad")                : (enter_text_mode(), send_with_capslock("g")))
-z:: mouse_top() ? CycAct.slow("app_powershell_terminal")                                        : (mouse_edge() ? CycAct.slow("app_powershell")             : (enter_text_mode(), send_with_capslock("z")))
+z:: mouse_top() ? CycAct.slow("app_powershell_terminal")                                        : (mouse_edge() ? CycAct.slow("app_powershell_terminal")             : (enter_text_mode(), send_with_capslock("z")))
 x:: mouse_top() ? CycAct.slow("app_word", "show_thishotkey", "show_thishotkey")                 : (mouse_edge() ? CycAct.slow("app_word")                   : (enter_text_mode(), send_with_capslock("x")))
 c:: mouse_top() ? CycAct.slow("close_window_in_taskbar", "show_thishotkey", "show_thishotkey")  : (mouse_edge() ? CycAct.slow("close_window_in_taskbar")    : (enter_text_mode(), send_with_capslock("c")))
-v:: mouse_top() ? CycAct.slow("url_bilibili", "url_qqlive", "url_xiaohongshu")                  : (mouse_edge() ? CycAct.slow("url_bilibili")               : (SendInput("^v")                           ))
+v:: mouse_top() ? CycAct.slow("url_bilibili", "url_qqlive", "url_xiaohongshu")                  : (mouse_edge() ? CycAct.slow("url_bilibili")               : send_with_capslock("v"))
 b:: mouse_top() ? CycAct.slow("^+!w")            : (mouse_edge() ? CycAct.slow("^!+2", "^!+1", "^!+3")       : (enter_text_mode(), send_with_capslock("b")))
 
 XButton1:: mouse_top() ? Send("{RAlt}") : (mouse_edge() ? CycAct.slow("!+{Tab}") : SendInput("{XButton1}"))
 XButton2:: mouse_top() ? Send("{RAlt}") : (mouse_edge() ? CycAct.slow("!+{Tab}") : SendInput("{XButton2}"))
-F23:: mouse_top() ? Send("{RAlt}") : (mouse_edge() ? CycAct.slow("!+{Tab}") : SendInput("{F23}"))
-F24:: mouse_top() ? Send("{RAlt}") : (mouse_edge() ? CycAct.slow("!+{Tab}") : SendInput("{F24}"))
+F13:: mouse_top() ? Send("{RAlt}") : (mouse_edge() ? CycAct.slow("!+{Tab}") : SendInput("{F13}"))
+F14:: mouse_top() ? Send("{RAlt}") : (mouse_edge() ? CycAct.slow("!+{Tab}") : SendInput("{F14}"))
 Space:: mouse_top() ? CycAct.slow("app_keyboard") : (mouse_edge() ? CycAct.slow("!+{Tab}") : SendInput("{Space}"))
 ; Space:: mouse_top() ? Send("{RAlt}") : (mouse_edge() ? CycAct.slow("!+{Tab}") : SendInput("{Space}"))
+
+
 
 ;  CycAct.slow("^+!q"), Sleep(1000), CycAct.slow("^+!w")
 ~y:: enter_text_mode()
@@ -700,7 +743,7 @@ release_stuck_keys() {
     }
 }
 
-$*F24:: release_stuck_keys()
+$*F14:: release_stuck_keys()
 
 ~MButton:: CycAct.fast("{Volume_Mute}")
 WheelUp:: !mouse_edge() ? SendInput("{WheelUp}") : SendInput("{volume_up}")
@@ -709,8 +752,8 @@ Ctrl::      action_ctrl()
 RShift::    SendInput("{Tab}") 
 ~LButton::  exit_text_mode()
 RButton::   enter_text_mode(), SendInput("{RButton}")
-; F23::       action_f23()
-; F24::       action_f24()
+; F13::       action_F13()
+; F14::       action_F14()
 ; XButton1::  action_xbutton1()
 ; XButton2::  action_xbutton2()
 2:: ime_is_composing() ? SendInput("2") : SendInput("{Delete}")
@@ -722,51 +765,53 @@ Enter::     action_enter()
 Space:: SendInput("{Space}")
 
 
-XButton1 & 2::      !mouse_edge() ? CycAct.slow("^n", "^+n", "#n")               : CycAct.slow("{F6}", "^{F6}", "+{F6}")
-XButton1 & 3::      !mouse_edge() ? CycAct.slow("^{Enter}")                      : CycAct.slow("{F6}", "^{F6}", "+{F6}")
-XButton1 & 4::      !mouse_edge() ? CycAct.slow("^m", "^+m", "#m")               : CycAct.slow("{F6}", "^{F6}", "+{F6}")
-XButton1 & q::      !mouse_edge() ? CycAct.slow("^q", "^+q", "#q")               : CycAct.slow("^y", "^+y", "#y") 
-XButton1 & w::      !mouse_edge() ? CycAct.slow("close_win_by_ctrlw", "^+w", "#w") : CycAct.slow("^u", "^+u", "#u") 
-XButton1 & e::      !mouse_edge() ? CycAct.slow("^e", "^+e", "#e")               : CycAct.slow("^i", "^+i", "#i") 
-XButton1 & r::      !mouse_edge() ? CycAct.slow("^r", "^+r", "#r")               : CycAct.slow("^o", "^+o", "#o") 
-XButton1 & t::      !mouse_edge() ? CycAct.slow("^t", "^+t", "#t")               : CycAct.slow("^p", "^+p", "#p")
-XButton1 & a::      !mouse_edge() ? CycAct.slow("^a", "^+a", "#a")               : CycAct.slow("^h", "^+h", "#h")
-XButton1 & s::      !mouse_edge() ? CycAct.slow("^s", "^+s", "#s")               : CycAct.slow("^j", "^+j", "#j")
-XButton1 & d::      !mouse_edge() ? CycAct.slow("^d", "^+d", "#d")               : CycAct.slow("^k", "^+k", "#k")
-XButton1 & f::      !mouse_edge() ? CycAct.slow("^f", "^+f", "#f")               : CycAct.slow("^l", "^+l", "#l")
-XButton1 & g::      !mouse_edge() ? CycAct.slow("^g", "^+g", "#g")               : CycAct.slow("^;", "^+;", "#;")
-XButton1 & z::      !mouse_edge() ? CycAct.slow("^z", "^+z", "#z")               : CycAct.slow("show_thishotkey")
-XButton1 & x::      !mouse_edge() ? CycAct.slow("^x", "^+x", "#x")               : CycAct.slow("show_thishotkey")
-XButton1 & c::      !mouse_edge() ? CycAct.slow("^c", "^+c", "#c")               : CycAct.slow("show_thishotkey")
-XButton1 & v::      !mouse_edge() ? step_clip()                                  : CycAct.slow("^v", "^+v", "#v", "#^v") 
-XButton1 & b::      !mouse_edge() ? CycAct.slow("^b", "^+b", "#b")               : CycAct.slow("{F12}", "^{F12}", "+{F12}")   
-XButton1 & Esc::    !mouse_edge() ? CycAct.slow("show_thishotkey")               : CycAct.slow("show_thishotkey")
-XButton1 & RShift:: !mouse_edge() ? CycAct.slow("show_thishotkey")               : CycAct.slow("show_thishotkey")
-XButton1 & Ctrl::   !mouse_edge() ? CycAct.slow("!+{Tab}")                       : CycAct.slow("show_thishotkey")
-XButton1 & Space::  !mouse_edge() ? CycAct.slow("!#{Space}")                     : CycAct.slow("show_thishotkey")
 
-F23 & 2::           !mouse_edge() ? CycAct.slow("show_thishotkey")               : CycAct.slow("show_thishotkey")
-F23 & 3::           !mouse_edge() ? CycAct.slow("show_thishotkey")               : CycAct.slow("show_thishotkey")
-F23 & 4::           !mouse_edge() ? CycAct.slow("show_thishotkey")               : CycAct.slow("show_thishotkey")
-F23 & q::           !mouse_edge() ? CycAct.slow("{F6}", "^{F6}", "+{F6}")        : CycAct.slow("{F6}", "^{F6}", "+{F6}")
-F23 & w::           !mouse_edge() ? CycAct.slow("{F7}", "^{F7}", "+{F7}")        : CycAct.slow("{F7}", "^{F7}", "+{F7}")
-F23 & e::           !mouse_edge() ? CycAct.slow("{F8}", "^{F8}", "+{F8}")        : CycAct.slow("{F8}", "^{F8}", "+{F8}")
-F23 & r::           !mouse_edge() ? CycAct.slow("{F9}", "^{F9}", "+{F9}")        : CycAct.slow("{F9}", "^{F9}", "+{F9}")
-F23 & t::           !mouse_edge() ? CycAct.slow("{F10}", "^{F10}", "+{F10}")     : CycAct.slow("{F10}", "^{F10}", "+{F10}")
-F23 & a::           !mouse_edge() ? CycAct.slow("{F1}", "^{F1}", "+{F1}")        : CycAct.slow("{F1}", "^{F1}", "+{F1}") 
-F23 & s::           !mouse_edge() ? CycAct.slow("{F2}", "^{F2}", "+{F2}")        : CycAct.slow("{F2}", "^{F2}", "+{F2}")
-F23 & d::           !mouse_edge() ? CycAct.slow("{F3}", "^{F3}", "+{F3}")        : CycAct.slow("{F3}", "^{F3}", "+{F3}")
-F23 & f::           !mouse_edge() ? CycAct.slow("{F4}", "!{F4}", "+{F4}")        : CycAct.slow("{F4}", "!{F4}", "+{F4}") 
-F23 & g::           !mouse_edge() ? CycAct.slow("{F5}", "+{F5}", "!{F5}")        : CycAct.slow("{F5}", "+{F5}", "!{F5}") 
-F23 & z::           !mouse_edge() ? CycAct.slow("show_thishotkey")               : CycAct.slow("show_thishotkey")
-F23 & x::           !mouse_edge() ? CycAct.slow("show_thishotkey")               : CycAct.slow("show_thishotkey")
-F23 & c::           !mouse_edge() ? CycAct.slow("show_thishotkey")               : CycAct.slow("show_thishotkey")
-F23 & v::           !mouse_edge() ? CycAct.slow("{F11}", "^{F11}", "+{F11}")     : CycAct.slow("{F11}", "^{F11}", "+{F11}")  
-F23 & b::           !mouse_edge() ? CycAct.slow("{F12}", "^{F12}", "+{F12}")     : CycAct.slow("{F12}", "^{F12}", "+{F12}")   
-F23 & Esc::         !mouse_edge() ? CycAct.slow("show_thishotkey")               : CycAct.slow("show_thishotkey")
-F23 & RShift::      !mouse_edge() ? CycAct.slow("show_thishotkey")               : CycAct.slow("show_thishotkey")
-F23 & Ctrl::        !mouse_edge() ? CycAct.slow("show_thishotkey")               : CycAct.slow("show_thishotkey")
-F23 & Space::       !mouse_edge() ? CycAct.slow("show_thishotkey")               : CycAct.slow("show_thishotkey")
+XButton1 & 2::       mouse_top() ? CycAct.slow("{F6}", "^{F6}", "+{F6}")    : (mouse_edge() ? CycAct.slow("show_thishotkey")               : CycAct.slow("^n", "^+n", "#n"))            
+XButton1 & 3::       mouse_top() ? CycAct.slow("{F6}", "^{F6}", "+{F6}")    : (mouse_edge() ? CycAct.slow("show_thishotkey")               : CycAct.slow("^{Enter}"))                     
+XButton1 & 4::       mouse_top() ? CycAct.slow("{F6}", "^{F6}", "+{F6}")    : (mouse_edge() ? CycAct.slow("show_thishotkey")               : CycAct.slow("^m", "^+m", "#m"))              
+XButton1 & q::       mouse_top() ? CycAct.slow("^y", "^+y", "#y")           : (mouse_edge() ? CycAct.slow("show_thishotkey")               : CycAct.slow("^q", "^+q", "#q"))              
+XButton1 & w::       mouse_top() ? CycAct.slow("^u", "^+u", "#u")           : (mouse_edge() ? CycAct.slow("{Escape}")                      : CycAct.slow("close_win_by_ctrlw", "^+w", "#w")) 
+XButton1 & e::       mouse_top() ? CycAct.slow("^i", "^+i", "#i")           : (mouse_edge() ? CycAct.slow("^{WheelUp}")                    : CycAct.slow("^e", "^+e", "#e"))              
+XButton1 & r::       mouse_top() ? CycAct.slow("^o", "^+o", "#o")           : (mouse_edge() ? CycAct.slow("^k^o")                          : CycAct.slow("^r", "^+r", "#r"))              
+XButton1 & t::       mouse_top() ? CycAct.slow("^p", "^+p", "#p")           : (mouse_edge() ? CycAct.slow("^y")                            : CycAct.slow("^t", "^+t", "#t"))              
+XButton1 & a::       mouse_top() ? CycAct.slow("^h", "^+h", "#h")           : (mouse_edge() ? CycAct.slow("show_thishotkey")               : CycAct.slow("^a", "^+a", "#a"))              
+XButton1 & s::       mouse_top() ? CycAct.slow("^j", "^+j", "#j")           : (mouse_edge() ? CycAct.slow("+#{Left}")                      : CycAct.slow("^s", "save_as", "#s"))          
+XButton1 & d::       mouse_top() ? CycAct.slow("^k", "^+k", "#k")           : (mouse_edge() ? CycAct.slow("^{WheelDown}")                  : CycAct.slow("^d", "^+d", "#d"))              
+XButton1 & f::       mouse_top() ? CycAct.slow("^l", "^+l", "#l")           : (mouse_edge() ? CycAct.slow("show_thishotkey")               : CycAct.slow("^f", "^+f", "#f"))              
+XButton1 & g::       mouse_top() ? CycAct.slow("^;", "^+;", "#;")           : (mouse_edge() ? CycAct.slow("paste_format")                  : CycAct.slow("^g", "^+g", "#g"))              
+XButton1 & z::       mouse_top() ? CycAct.slow("show_thishotkey")           : (mouse_edge() ? CycAct.slow("show_thishotkey")               : CycAct.slow("^z", "^+z", "#z"))              
+XButton1 & x::       mouse_top() ? CycAct.slow("show_thishotkey")           : (mouse_edge() ? CycAct.slow("show_thishotkey")               : CycAct.slow("^x", "^+x", "#x"))              
+XButton1 & c::       mouse_top() ? CycAct.slow("show_thishotkey")           : (mouse_edge() ? CycAct.slow("show_thishotkey")               : CycAct.slow("^c", "^+c", "#c"))              
+XButton1 & v::       mouse_top() ? CycAct.slow("^v", "^+v", "#v", "#^v")    : (mouse_edge() ? step_text()               : step_clip())                                 
+XButton1 & b::       mouse_top() ? CycAct.slow("{F12}", "^{F12}", "+{F12}") : (mouse_edge() ? CycAct.slow("show_thishotkey")               : CycAct.slow("^b", "^+b", "#b"))              
+XButton1 & Esc::     mouse_top() ? CycAct.slow("show_thishotkey")           : (mouse_edge() ? CycAct.slow("show_thishotkey")               : CycAct.slow("^``"))              
+XButton1 & RShift::  mouse_top() ? CycAct.slow("show_thishotkey")           : (mouse_edge() ? CycAct.slow("show_thishotkey")               : CycAct.slow("show_thishotkey"))              
+XButton1 & Ctrl::    mouse_top() ? CycAct.slow("show_thishotkey")           : (mouse_edge() ? CycAct.slow("show_thishotkey")               : CycAct.slow("!+{Tab}"))                      
+XButton1 & Space::   mouse_top() ? CycAct.slow("show_thishotkey")           : (mouse_edge() ? CycAct.slow("show_thishotkey")               : CycAct.slow("!#{Space}"))                    
+
+
+F13 & 2::           !mouse_top() ? CycAct.slow("show_thishotkey")               : CycAct.slow("show_thishotkey")
+F13 & 3::           !mouse_top() ? CycAct.slow("show_thishotkey")               : CycAct.slow("show_thishotkey")
+F13 & 4::           !mouse_top() ? CycAct.slow("show_thishotkey")               : CycAct.slow("show_thishotkey")
+F13 & q::           !mouse_top() ? CycAct.slow("{F6}", "^{F6}", "+{F6}")        : CycAct.slow("{F6}", "^{F6}", "+{F6}")
+F13 & w::           !mouse_top() ? CycAct.slow("{F7}", "^{F7}", "+{F7}")        : CycAct.slow("{F7}", "^{F7}", "+{F7}")
+F13 & e::           !mouse_top() ? CycAct.slow("{F8}", "^{F8}", "+{F8}")        : CycAct.slow("{F8}", "^{F8}", "+{F8}")
+F13 & r::           !mouse_top() ? CycAct.slow("{F9}", "^{F9}", "+{F9}")        : CycAct.slow("{F9}", "^{F9}", "+{F9}")
+F13 & t::           !mouse_top() ? CycAct.slow("{F10}", "^{F10}", "+{F10}")     : CycAct.slow("{F10}", "^{F10}", "+{F10}")
+F13 & a::           !mouse_top() ? CycAct.slow("{F1}", "^{F1}", "+{F1}")        : CycAct.slow("{F1}", "^{F1}", "+{F1}") 
+F13 & s::           !mouse_top() ? CycAct.slow("{F2}", "^{F2}", "+{F2}")        : CycAct.slow("{F2}", "^{F2}", "+{F2}")
+F13 & d::           !mouse_top() ? CycAct.slow("{F3}", "^{F3}", "+{F3}")        : CycAct.slow("{F3}", "^{F3}", "+{F3}")
+F13 & f::           !mouse_top() ? CycAct.slow("{F4}", "!{F4}", "+{F4}")        : CycAct.slow("{F4}", "!{F4}", "+{F4}") 
+F13 & g::           !mouse_top() ? CycAct.slow("{F5}", "+{F5}", "!{F5}")        : CycAct.slow("{F5}", "+{F5}", "!{F5}") 
+F13 & z::           !mouse_top() ? CycAct.slow("show_thishotkey")               : CycAct.slow("show_thishotkey")
+F13 & x::           !mouse_top() ? CycAct.slow("show_thishotkey")               : CycAct.slow("show_thishotkey")
+F13 & c::           !mouse_top() ? CycAct.slow("show_thishotkey")               : CycAct.slow("show_thishotkey")
+F13 & v::           !mouse_top() ? CycAct.slow("{F11}", "^{F11}", "+{F11}")     : CycAct.slow("{F11}", "^{F11}", "+{F11}")  
+F13 & b::           !mouse_top() ? CycAct.slow("{F12}", "^{F12}", "+{F12}")     : CycAct.slow("{F12}", "^{F12}", "+{F12}")   
+F13 & Esc::         !mouse_top() ? CycAct.slow("show_thishotkey")               : CycAct.slow("show_thishotkey")
+F13 & RShift::      !mouse_top() ? CycAct.slow("show_thishotkey")               : CycAct.slow("show_thishotkey")
+F13 & Ctrl::        !mouse_top() ? CycAct.slow("show_thishotkey")               : CycAct.slow("show_thishotkey")
+F13 & Space::       !mouse_top() ? CycAct.slow("show_thishotkey")               : CycAct.slow("show_thishotkey")
 
 
 
@@ -775,14 +820,15 @@ RButton & 3::       mouse_top() ? CycAct.slow("url_chatgpt", "url_yunwu", "url_l
 RButton & 4::       mouse_top() ? CycAct.slow("url_chatgpt", "url_yunwu", "url_lovart")    : (mouse_edge() ? CycAct.slow("show_thishotkey")               : CycAct.slow("app_qianwen", "url_deepseek", "do_nothing"))
 RButton & q::       mouse_top() ? CycAct.slow("url_chatgpt", "url_yunwu", "url_lovart")    : (mouse_edge() ? CycAct.slow("show_thishotkey")               : CycAct.slow("url_zhyw", "url_zhlmt", "url_wjx", "do_nothing"))
 RButton & w::       mouse_top() ? CycAct.slow("url_chatgpt", "url_yunwu", "url_lovart")    : (mouse_edge() ? CycAct.slow("{Escape}")                      : CycAct.slow("app_wechat", "app_wxwork", "app_wemeet", "do_nothing"))
-RButton & e::       mouse_top() ? CycAct.slow("url_chatgpt", "url_yunwu", "url_lovart")    : (mouse_edge() ? CycAct.slow("^{WheelUp}")                    : CycAct.slow("app_everything", "app_evernote", "app_eagle", "do_nothing"))
+RButton & e::       mouse_top() ? CycAct.slow("url_chatgpt", "url_yunwu", "url_lovart")    : (mouse_edge() ? CycAct.slow("^{WheelUp}")                    : CycAct.slow("^/"))
+; RButton & e::       mouse_top() ? CycAct.slow("url_chatgpt", "url_yunwu", "url_lovart")    : (mouse_edge() ? CycAct.slow("^{WheelUp}")                    : CycAct.slow("app_everything", "app_evernote", "app_eagle", "do_nothing"))
 RButton & r::       mouse_top() ? CycAct.slow("url_chatgpt", "url_yunwu", "url_lovart")    : (mouse_edge() ? CycAct.slow("^z")                            : CycAct.slow("^z"))
 RButton & t::       mouse_top() ? CycAct.slow("url_chatgpt", "url_yunwu", "url_lovart")    : (mouse_edge() ? CycAct.slow("^y")                            : CycAct.slow("^y"))
 RButton & a::       mouse_top() ? CycAct.slow("url_chatgpt", "url_yunwu", "url_lovart")    : (mouse_edge() ? CycAct.slow("show_thishotkey")               : CycAct.slow("app_cherrystudio"))
 RButton & s::       mouse_top() ? CycAct.slow("url_chatgpt", "url_yunwu", "url_lovart")    : (mouse_edge() ? CycAct.slow("+#{Left}")                      : CycAct.slow("+#{Left}"))
 RButton & d::       mouse_top() ? CycAct.slow("url_chatgpt", "url_yunwu", "url_lovart")    : (mouse_edge() ? CycAct.slow("^{WheelDown}")                  : CycAct.slow("open_current_path", "open_recycle_bin", "open_duty_schedule", "do_nothing"))
 RButton & f::       mouse_top() ? CycAct.slow("path_weekly_report")    : (mouse_edge() ? CycAct.slow("show_thishotkey")               : CycAct.slow("app_notepad", "app_excel", "app_baidu", "do_nothing"))
-RButton & g::       mouse_top() ? CycAct.slow("url_chatgpt", "url_yunwu", "url_lovart")    : (mouse_edge() ? CycAct.slow("paste_format")                  : CycAct.slow("url_jd", "url_xianyu", "url_taobao", "do_nothing"))
+RButton & g::       mouse_top() ? CycAct.slow("url_jd", "url_xianyu", "url_taobao", "do_nothing")    : (mouse_edge() ? CycAct.slow("paste_format")                  : CycAct.slow("paste_format"))
 RButton & z::       mouse_top() ? CycAct.slow("url_chatgpt", "url_yunwu", "url_lovart")    : (mouse_edge() ? CycAct.slow("show_thishotkey")               : CycAct.slow("app_powershell", "app_powershell_admin", "app_powershell_terminal", "app_cmd", "do_nothing"))
 RButton & x::       mouse_top() ? CycAct.slow("url_chatgpt", "url_yunwu", "url_lovart")    : (mouse_edge() ? CycAct.slow("show_thishotkey")               : CycAct.slow("app_word", "app_mailmaster", "app_youdaodict", "do_nothing"))
 RButton & c::       mouse_top() ? CycAct.slow("url_chatgpt", "url_yunwu", "url_lovart")    : (mouse_edge() ? CycAct.slow("show_thishotkey")               : CycAct.slow("close_window_in_taskbar"))
@@ -791,14 +837,14 @@ RButton & b::       mouse_top() ? CycAct.slow("url_chatgpt", "url_yunwu", "url_l
 RButton & Esc::     mouse_top() ? CycAct.slow("url_chatgpt", "url_yunwu", "url_lovart")    : (mouse_edge() ? CycAct.slow("show_thishotkey")               : CycAct.slow("show_thishotkey"))
 RButton & RShift::  mouse_top() ? CycAct.slow("url_chatgpt", "url_yunwu", "url_lovart")    : (mouse_edge() ? CycAct.slow("show_thishotkey")               : CycAct.slow("show_thishotkey"))
 RButton & Ctrl::    mouse_top() ? CycAct.slow("url_chatgpt", "url_yunwu", "url_lovart")    : (mouse_edge() ? CycAct.slow("show_thishotkey")               : CycAct.slow("show_thishotkey"))
-RButton & Space::   mouse_top() ? CycAct.slow("url_chatgpt", "url_yunwu", "url_lovart")    : (mouse_edge() ? CycAct.slow("show_thishotkey")               : CycAct.slow("show_thishotkey"))
+RButton & Space::   mouse_top() ? CycAct.slow("url_chatgpt", "url_yunwu", "url_lovart")    : (mouse_edge() ? CycAct.slow("show_thishotkey")               : CycAct.slow("^/"))
 
 XButton2 & 2::      !mouse_edge() ? CycAct.slow("show_thishotkey")               : CycAct.slow("show_thishotkey") 
 XButton2 & 3::      !mouse_edge() ? CycAct.slow("show_thishotkey")               : CycAct.slow("show_thishotkey") 
 XButton2 & 4::      !mouse_edge() ? CycAct.slow("show_thishotkey")               : CycAct.slow("show_thishotkey") 
 XButton2 & q::      !mouse_edge() ? CycAct.slow("show_thishotkey")               : CycAct.slow("show_thishotkey") 
 XButton2 & w::      !mouse_edge() ? CycAct.slow("show_thishotkey")               : CycAct.slow("show_thishotkey") 
-XButton2 & e::      !mouse_edge() ? CycAct.slow("{Up}")                          : CycAct.slow("{Up}")            
+; XButton2 & e::      !mouse_edge() ? CycAct.slow("{Up}")                          : CycAct.slow("{Up}")            
 XButton2 & r::      !mouse_edge() ? CycAct.slow("show_thishotkey")               : CycAct.slow("show_thishotkey") 
 XButton2 & t::      !mouse_edge() ? CycAct.slow("show_thishotkey")               : CycAct.slow("show_thishotkey") 
 XButton2 & a::      !mouse_edge() ? CycAct.slow("move_tab_new_window")               : CycAct.slow("show_thishotkey") 
@@ -810,7 +856,7 @@ XButton2 & g::      !mouse_edge() ? CycAct.slow("show_thishotkey")              
 XButton2 & z::      !mouse_edge() ? CycAct.slow("show_thishotkey")               : CycAct.slow("show_thishotkey") 
 XButton2 & x::      !mouse_edge() ? CycAct.slow("show_thishotkey")               : CycAct.slow("show_thishotkey") 
 XButton2 & c::      !mouse_edge() ? CycAct.slow("show_thishotkey")               : CycAct.slow("show_thishotkey") 
-XButton2 & v::      !mouse_edge() ? CycAct.slow("paste_ai_prompt_1", "paste_ai_prompt_2", "paste_ai_prompt_3") : CycAct.slow("show_thishotkey") 
+XButton2 & v::      !mouse_edge() ? step_text() : CycAct.slow("show_thishotkey") 
 XButton2 & b::      !mouse_edge() ? CycAct.slow("show_thishotkey")               : CycAct.slow("show_thishotkey") 
 XButton2 & Esc::    !mouse_edge() ? CycAct.slow("show_thishotkey")               : CycAct.slow("show_thishotkey") 
 XButton2 & RShift:: !mouse_edge() ? CycAct.slow("show_thishotkey")               : CycAct.slow("show_thishotkey") 
@@ -840,28 +886,28 @@ XButton2 & Space::  !mouse_edge() ? CycAct.slow("show_thishotkey")              
 ~LButton & Ctrl::   CycAct.slow("show_thishotkey")         
 ~LButton & Space::  CycAct.slow("!#{Space}")  
            
-F24 & 2::           CycAct.slow("show_thishotkey")
-F24 & 3::           CycAct.slow("show_thishotkey")
-F24 & 4::           CycAct.slow("show_thishotkey")
-F24 & q::           SendInput("6")
-F24 & w::           SendInput("7")
-F24 & e::           SendInput("8")
-F24 & r::           SendInput("9")
-F24 & t::           SendInput("0")
-F24 & a::           SendInput("1")
-F24 & s::           SendInput("2")
-F24 & d::           SendInput("3")
-F24 & f::           SendInput("4")
-F24 & g::           SendInput("5")
-F24 & z::           SendInput("1")
-F24 & x::           SendInput("1")
-F24 & c::           SendInput("1")
-F24 & v::           SendInput("_")
-F24 & b::           SendInput(".")          
-F24 & Esc::         CycAct.slow("show_thishotkey")
-; F24 & RShift::      CycAct.slow("show_thishotkey")
-F24 & Ctrl::        CycAct.slow("show_thishotkey")
-F24 & Space::       CycAct.slow("show_thishotkey")
+F14 & 2::           CycAct.slow("show_thishotkey")
+; F14 & 3::           CycAct.slow("show_thishotkey")
+F14 & 4::           CycAct.slow("show_thishotkey")
+F14 & q::           SendInput("6")
+F14 & w::           SendInput("7")
+F14 & e::           SendInput("8")
+F14 & r::           SendInput("9")
+F14 & t::           SendInput("0")
+F14 & a::           SendInput("1")
+F14 & s::           SendInput("2")
+F14 & d::           SendInput("3")
+F14 & f::           SendInput("4")
+F14 & g::           SendInput("5")
+F14 & z::           SendInput("1")
+F14 & x::           SendInput("1")
+F14 & c::           SendInput("1")
+F14 & v::           SendInput("_")
+F14 & b::           SendInput(".")          
+F14 & Esc::         CycAct.slow("show_thishotkey")
+; F14 & RShift::      CycAct.slow("show_thishotkey")
+F14 & Ctrl::        CycAct.slow("show_thishotkey")
+F14 & Space::       CycAct.slow("show_thishotkey")
        
 >^2:: CycAct.slow("show_thishotkey")
 >^3:: CycAct.slow("show_thishotkey")
@@ -896,8 +942,8 @@ F24 & Space::       CycAct.slow("show_thishotkey")
 >^;:: SendInput(".")
 >^n:: SendInput("<")
 >^m:: SendInput(">")
->^F23::         SendInput("{PgUp}") 
->^F24::         CycAct.slow("show_thishotkey")
+>^F13::         SendInput("{PgUp}") 
+>^F14::         CycAct.slow("show_thishotkey")
 >^RButton::     screenshot()
 >^XButton1::    SendInput("{PgDn}")
 
@@ -915,8 +961,8 @@ F24 & Space::       CycAct.slow("show_thishotkey")
 >+l:: CycAct.slow("show_thishotkey")
 >+n:: CycAct.slow("show_thishotkey")
 >+m:: CycAct.slow("show_thishotkey")
->+F23::         CycAct.slow("show_thishotkey")
->+F24::         CycAct.slow("show_thishotkey")
+>+F13::         CycAct.slow("show_thishotkey")
+>+F14::         CycAct.slow("show_thishotkey")
 >+RButton::     interactive_region_ocr(, , 0)
 >+XButton1::    CycAct.slow("show_thishotkey")                  
 >+WheelUp::     SendInput("{PgUp}")    
@@ -924,8 +970,8 @@ F24 & Space::       CycAct.slow("show_thishotkey")
 
 ^+RButton:: screenshot_translate()
 ^+XButton1:: CycAct.slow("show_thishotkey")
-^+F23:: CycAct.slow("show_thishotkey")
-^+F24:: CycAct.slow("show_thishotkey")
+^+F13:: CycAct.slow("show_thishotkey")
+^+F14:: CycAct.slow("show_thishotkey")
 
 Space & 2:: SendInput("@")
 Space & 3:: SendInput("{#}")
@@ -995,7 +1041,7 @@ release_modifiers() {
         "Space",        "Enter", 
         "XButton1",     "XButton2", 
         "LButton",      "RButton", 
-        "F23",          "F24"
+        "F13",          "F14"
     ]
 
     for key in modifiers {
